@@ -1,0 +1,20 @@
+{
+  "name": "todoist-monorepo-setup",
+  "description": "Todoist - React / Express / MySQL/ React Native",
+  "version": "0.0.0",
+  "license": "ISC",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "turbo": "^1.10.16"
+  },
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
