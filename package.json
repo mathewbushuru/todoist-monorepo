@@ -7,6 +7,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "turbo dev --no-cache",
+    "dev:landing": "turbo dev --filter=landing",
     "build": "turbo build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -7,8 +7,7 @@
  - `apps/web/landing`: An app for the landing page built with React.
  - `apps/web/webclient`: An app for the todo application built with React (only authenticated users);
  - `apps/mobile`: An app built with React Native for iOS and android devices
- - `apps/server`: An app built with Express for the backend server / API that serves the mobile and web apps
- - `apps/database`: A MySQL database used by the server application.
+ - `apps/server`: An app built with Express for the backend API that serves the mobile and web apps, and connect to the MySQL database.
  - `packages/ui`: A React component library package shared by  the web and mobile apps.
 
  I am using `Yarn workspaces` and `Turborepo` for monorepo support, task/scripts caching and package management.
