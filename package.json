@@ -9,6 +9,7 @@
     "dev": "turbo dev --no-cache",
     "dev:landing": "turbo dev --filter=landing",
     "build": "turbo build",
+    "build:ui": "turbo build --filter=ui",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {},

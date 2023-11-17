@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}
