@@ -24,3 +24,13 @@
 `Database`: MySQL, PlanetScale
 
 Note that the backend is deployed on serverless architecture so it faces cold start if the app has spin down due to inactivity.
+
+##### Progress - web:landing
+
+Desktop
+
+![Desktop](./docs/desktopProgress.jpg)
+
+Tablet, Mobile
+
+![Mobile](./docs/ipadIphoneProgress.jpg) 
