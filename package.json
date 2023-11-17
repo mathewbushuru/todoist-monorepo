@@ -12,7 +12,7 @@
     "build:landing": "turbo build --filter=landing",
     "build:ui": "turbo build --filter=ui",
     "clean:ui": "turbo clean --filter=ui",
-    "predeploy": "yarn turbo clean build test"
+    "predeploy": "turbo clean build test"
   },
   "dependencies": {},
   "devDependencies": {

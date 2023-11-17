@@ -15,4 +15,5 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: "18.12"
+      - run: yarn install
       - run: yarn predeploy
