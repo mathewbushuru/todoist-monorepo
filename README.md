@@ -15,10 +15,12 @@
 
  ##### Tech stack
 
-`Frontend` : React + Vite, React Native, TypeScript, TailwindCSS, Redux, RTK Query, Vitest
+`Web` : React + Vite, TypeScript, TailwindCSS, Redux, RTK Query, Vitest
 
-`Backend` : NodeJS, ExpressJS, Jest, SuperTest
+`Mobile`: React Native, Expo, TypeScript
 
-`Database`: MySQL
+`Backend` : NodeJS, ExpressJS, TypeScript Jest, SuperTest
+
+`Database`: MySQL, PlanetScale
 
 Note that the backend is deployed on serverless architecture so it faces cold start if the app has spin down due to inactivity.
