@@ -9,6 +9,7 @@
     "dev": "turbo dev --no-cache",
     "dev:landing": "turbo dev --filter=landing --filter=ui",
     "build": "turbo build",
+    "build:landing": "turbo build --filter=landing",
     "build:ui": "turbo build --filter=ui",
     "clean:ui": "turbo clean --filter=ui"
   },

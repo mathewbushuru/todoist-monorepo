@@ -332,11 +332,11 @@ video {
 .h-10 {
   height: 2.5rem;
 }
-.h-9 {
-  height: 2.25rem;
-}
 .h-11 {
   height: 2.75rem;
+}
+.h-9 {
+  height: 2.25rem;
 }
 .items-center {
   align-items: center;
@@ -351,21 +351,21 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(222 72 58 / var(--tw-bg-opacity));
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .text-base {
   font-size: 1rem;
@@ -377,17 +377,17 @@ video {
 .font-normal {
   font-weight: 400;
 }
-.text-primary-foreground {
+.text-link {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(49 111 234 / var(--tw-text-opacity));
 }
 .text-popover-foreground {
   --tw-text-opacity: 1;
   color: rgb(35 33 21 / var(--tw-text-opacity));
 }
-.text-link {
+.text-primary-foreground {
   --tw-text-opacity: 1;
-  color: rgb(49 111 234 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .transition-opacity {
   transition-property: opacity;
