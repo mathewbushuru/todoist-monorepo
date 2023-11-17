@@ -29,8 +29,8 @@ Note that the backend is deployed on serverless architecture so it faces cold st
 
 Desktop
 
-![Desktop](./docs/desktopProgress.jpg)
+![Desktop](./.github/docs/desktopProgress.jpg)
 
 Tablet, Mobile
 
-![Mobile](./docs/ipadIphoneProgress.jpg) 
+![Mobile](./.github/docs/ipadIphoneProgress.jpg) 

@@ -9,11 +9,15 @@
       "cache": false,
       "persistent": true
     },
+    "predeploy": {
+      "dependsOn": ["build", "preview"]
+    },
     "clean": {
       "cache": false
     },
     "preview": {
       "dependsOn": ["build"]
-    }
+    },
+    "test": {}
   }
 }

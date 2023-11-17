@@ -11,7 +11,8 @@
     "build": "turbo build",
     "build:landing": "turbo build --filter=landing",
     "build:ui": "turbo build --filter=ui",
-    "clean:ui": "turbo clean --filter=ui"
+    "clean:ui": "turbo clean --filter=ui",
+    "predeploy": "turbo clean build test"
   },
   "dependencies": {},
   "devDependencies": {
