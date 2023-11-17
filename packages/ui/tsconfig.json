@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": ["dom", "ES2015"],
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "target": "ES6",
     "jsx": "react-jsx",
     "noEmit": true,

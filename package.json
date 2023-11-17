@@ -7,10 +7,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "turbo dev --no-cache",
-    "dev:landing": "turbo dev --filter=landing",
+    "dev:landing": "turbo dev --filter=landing --filter=ui",
     "build": "turbo build",
     "build:ui": "turbo build --filter=ui",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean:ui": "turbo clean --filter=ui"
   },
   "dependencies": {},
   "devDependencies": {

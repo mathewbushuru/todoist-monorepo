@@ -3140,7 +3140,7 @@ module.exports = __toCommonJS(src_exports);
 var import_jsx_runtime = __toESM(require_jsx_runtime());
 function Button({ children }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-    "UIbutton - ",
+    "UIbuttons- ",
     children
   ] });
 }
