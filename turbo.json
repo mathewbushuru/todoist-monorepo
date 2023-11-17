@@ -11,6 +11,9 @@
     },
     "clean": {
       "cache": false
+    },
+    "preview": {
+      "dependsOn": ["build"]
     }
   }
 }

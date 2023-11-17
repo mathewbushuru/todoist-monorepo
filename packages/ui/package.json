@@ -1,9 +1,17 @@
 {
   "name": "ui",
   "version": "0.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/index.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "build": "tsup src/index.tsx --format esm,cjs --dts --external React",
@@ -12,6 +20,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "config": "*",
     "@types/react": "^18.2.37",
@@ -20,7 +31,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "postcss": "^8.4.31",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss": "^3.3.5",

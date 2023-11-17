@@ -1,11 +1,11 @@
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/navbar";
 
 function HomePage() {
   return (
-    <main className="flex flex-col items-center py-8 gap-4">
-        <Navbar />
+    <main className="bg-background text-foreground">
+      <Navbar />
     </main>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

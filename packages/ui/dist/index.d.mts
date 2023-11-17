@@ -11,4 +11,6 @@ interface buttonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, Var
 }
 declare function Button({ className, variant, size, ...props }: buttonProps): react_jsx_runtime.JSX.Element;
 
-export { Button, type buttonProps, buttonVariants };
+declare function Logo(): react_jsx_runtime.JSX.Element;
+
+export { Button, Logo, type buttonProps, buttonVariants };

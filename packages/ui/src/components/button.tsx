@@ -4,25 +4,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center sm:text-left rounded-md text-base font-medium transition-opacity",
+  "ui-inline-flex ui-items-center ui-justify-center ui-rounded-md ui-text-base ui-font-medium ui-transition-opacity",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:opacity-90",
-        ghost: "text-popover-foreground hover:bg-secondary",
-        link: "text-link font-normal hover:underline hover:underline-offset-4",
+        default: "ui-bg-primary ui-text-primary-foreground ui-hover:opacity-90",
+        ghost: "ui-text-popover-foreground hover:ui-bg-secondary",
+        link: "ui-text-link font-normal hover:underline hover:ui-underline-offset-4",
       },
       size: {
-        default: "py-2 px-4 h-10",
-        sm: "h-9 px-3",
-        lg: "h-11 px-8",
+        default: "ui-py-2 ui-px-4 ui-h-10",
+        sm: "ui-h-9 ui-px-3",
+        lg: "ui-h-11 ui-px-8",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 export interface buttonProps

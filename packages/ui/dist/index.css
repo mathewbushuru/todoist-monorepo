@@ -326,88 +326,85 @@ video {
   --tw-backdrop-saturate: ;
   --tw-backdrop-sepia: ;
 }
-.inline-flex {
+.ui-inline-flex {
   display: inline-flex;
 }
-.h-10 {
+.ui-hidden {
+  display: none;
+}
+.ui-h-10 {
   height: 2.5rem;
 }
-.h-11 {
+.ui-h-11 {
   height: 2.75rem;
 }
-.h-9 {
+.ui-h-9 {
   height: 2.25rem;
 }
-.items-center {
+.ui-items-center {
   align-items: center;
 }
-.justify-center {
+.ui-justify-center {
   justify-content: center;
 }
-.rounded-md {
+.ui-rounded-md {
   border-radius: 0.375rem;
 }
-.bg-primary {
+.ui-bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(222 72 58 / var(--tw-bg-opacity));
 }
-.px-3 {
+.ui-px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.px-4 {
+.ui-px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.px-8 {
+.ui-px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.py-2 {
+.ui-py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.text-base {
+.ui-text-base {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.font-medium {
+.ui-font-medium {
   font-weight: 500;
 }
-.font-normal {
-  font-weight: 400;
-}
-.text-link {
+.ui-text-link {
   --tw-text-opacity: 1;
   color: rgb(49 111 234 / var(--tw-text-opacity));
 }
-.text-popover-foreground {
+.ui-text-popover-foreground {
   --tw-text-opacity: 1;
   color: rgb(35 33 21 / var(--tw-text-opacity));
 }
-.text-primary-foreground {
+.ui-text-primary-foreground {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.transition-opacity {
+.ui-transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.hover\:bg-secondary:hover {
+.hover\:ui-bg-secondary:hover {
   background-color: #00000014;
 }
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
-.hover\:underline-offset-4:hover {
+.hover\:ui-underline-offset-4:hover {
   text-underline-offset: 4px;
 }
-.hover\:opacity-90:hover {
-  opacity: 0.9;
-}
 @media (min-width: 640px) {
-  .sm\:text-left {
-    text-align: left;
+  .sm\:ui-block {
+    display: block;
+  }
+  .sm\:ui-hidden {
+    display: none;
   }
 }
