@@ -7,6 +7,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // General screen imports
 import StartScreen from "./screens/start-screen";
 
+// Project imports
+import { Colors } from "./constants/colors";
+
 export type stackParamsList = {
   start: undefined;
 };
@@ -18,7 +21,14 @@ export default function App() {
     <>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          initialRouteName="start"
+          screenOptions={{
+            headerStyle: { backgroundColor: Colors.primaryBackground },
+            headerTintColor: Colors.primaryForeground,
+            headerTitleStyle: { fontWeight: "bold" },
+          }}
+        >
           <Stack.Screen
             name="start"
             component={StartScreen}
@@ -29,12 +39,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
