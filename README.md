@@ -34,3 +34,11 @@ Desktop
 Tablet, Mobile
 
 ![Mobile](./.github/docs/ipadIphoneProgress.jpg) 
+
+##### Progress - mobile
+
+
+
+https://github.com/mathewbushuru/todoist-monorepo/assets/29956810/537df352-07f6-43f0-b492-3221007d1c5d
+
+
