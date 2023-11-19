@@ -5,7 +5,7 @@
  The monorepo includes the following apps and packages:
 
  - `apps/web/landing`: An app for the landing page built with React.
- - `apps/web/webclient`: An app for the todo application built with React (only authenticated users);
+ - `apps/web/webclient`: An app for the todo application built with React (only authenticated users).
  - `apps/mobile`: An app built with React Native for iOS and android devices
  - `apps/server`: An app built with Express for the backend API that serves the mobile and web apps, and connects to the MySQL database.
  - `packages/ui`: A React component library package shared by  the web and mobile apps.
@@ -19,7 +19,7 @@
 
 `Mobile`: React Native, Expo, TypeScript
 
-`Backend` : NodeJS, ExpressJS, TypeScript Jest, SuperTest
+`Backend` : NodeJS, ExpressJS, TypeScript, Jest, SuperTest
 
 `Database`: MySQL, PlanetScale
 

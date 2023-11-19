@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external React",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "clean": "rm -rf dist"
   },
   "keywords": [],

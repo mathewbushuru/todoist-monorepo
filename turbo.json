@@ -10,7 +10,7 @@
       "persistent": true
     },
     "predeploy": {
-      "dependsOn": ["build", "preview"]
+      "dependsOn": ["build", "test"]
     },
     "clean": {
       "cache": false
