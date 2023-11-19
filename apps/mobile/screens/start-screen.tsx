@@ -1,9 +1,36 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
+
+import Button from "../components/ui/button";
+import { Colors } from "../constants/colors";
 
 export default function StartScreen() {
   return (
     <View style={styles.screen}>
-      <Text>Start Screen</Text>
+      <Image
+        source={require("../assets/imgs/logo.png")}
+        style={styles.logoImg}
+      />
+      <Image
+        source={require("../assets/imgs/start-image.webp")}
+        style={styles.startImg}
+      />
+      <Text style={styles.startText}>
+        Organize your work and life, finally.
+      </Text>
+      <View style={styles.buttonContainer}>
+        <Button iconName="ios-logo-apple" onPress={() => {}}>
+          Continue with Apple
+        </Button>
+        <Button iconName="ios-logo-google" variant="outline" onPress={() => {}}>
+          Continue with Google
+        </Button>
+        <Text style={styles.mutedText}>More sign-in options</Text>
+        <Text style={styles.mutedText}>
+          By continuing, you agree to Todoist's{" "}
+          <Text style={styles.mutedTextUnderlined}>Terms of Service </Text>
+          and <Text style={styles.mutedTextUnderlined}> Privacy Policy</Text>
+        </Text>
+      </View>
     </View>
   );
 }
@@ -11,7 +38,37 @@ export default function StartScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: 30,
-    paddingVertical: 70
+    paddingVertical: 70,
+    backgroundColor: Colors.background,
+  },
+  logoImg: {
+    width: 633 / 3.5,
+    height: 172 / 3.5,
+  },
+  startImg: {
+    width: 1358 / 3.5,
+    height: 806 / 3.5,
+  },
+  startText: {
+    fontSize: 26,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  buttonContainer: {
+    gap: 12,
+    alignSelf: "stretch",
+    paddingHorizontal: 20,
+  },
+  mutedText: {
+    color: Colors.muted,
+    fontSize: 12,
+    textAlign: "center",
+    marginTop: 1,
+  },
+  mutedTextUnderlined: {
+    textDecorationLine: "underline",
   },
 });
