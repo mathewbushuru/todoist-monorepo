@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import { Colors } from "config/colors";
 
 import Button from "../components/ui/button";
-import { Colors } from "../constants/colors";
 
 export default function StartScreen() {
   return (

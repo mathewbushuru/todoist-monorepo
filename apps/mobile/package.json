@@ -10,6 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "config": "*",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",

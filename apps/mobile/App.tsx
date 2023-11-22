@@ -4,11 +4,11 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+// Project imports
+import { Colors } from "config/colors";
+
 // General screen imports
 import StartScreen from "./screens/start-screen";
-
-// Project imports
-import { Colors } from "./constants/colors";
 
 export type stackParamsList = {
   start: undefined;

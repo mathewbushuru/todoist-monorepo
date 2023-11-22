@@ -9,8 +9,7 @@ import {
   type TextStyle,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
-import { Colors } from "../../constants/colors";
+import { Colors } from "config/colors";
 
 interface propsType {
   variant?: "default" | "outline" | "primary" | "link" | "secondary";

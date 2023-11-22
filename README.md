@@ -9,7 +9,7 @@
  - `apps/mobile`: An app built with React Native for iOS and android devices
  - `apps/server`: An app built with Express for the backend API that serves the mobile and web apps, and connects to the MySQL database.
  - `packages/ui`: A React component library package shared by  the web and mobile apps.
- - `packages/config`: Configuration package to be shared among the different apps e.g the tailwind config for the web apps and UI library.
+ - `packages/config`: Configuration package to be shared among the different apps e.g the tailwind config for the web apps and UI library, and global brand colors.
 
  I am using `Yarn workspaces` and `Turborepo` for monorepo support, task/scripts caching and package management. For the UI library package, I am using `esbuild` and `tsup` to bundle the React UI components into esm, cjs and dts types so that they can be reshared among the apps by importing and using them like we would use any other NPM package.
 
@@ -37,8 +37,4 @@ Tablet, Mobile
 
 ##### Progress - mobile
 
-
-
 https://github.com/mathewbushuru/todoist-monorepo/assets/29956810/537df352-07f6-43f0-b492-3221007d1c5d
-
-
