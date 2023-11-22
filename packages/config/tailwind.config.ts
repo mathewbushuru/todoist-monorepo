@@ -22,6 +22,7 @@ module.exports = {
         background: Colors.background,
         foreground: Colors.foreground,
         muted: Colors.muted,
+        border: Colors.border,
         link: "#316fea",
         footer: "#fff9f3",
       },
