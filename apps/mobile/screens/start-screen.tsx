@@ -30,7 +30,7 @@ export default function StartScreen({
           iconName="ios-logo-apple"
           onPress={() => {
             console.log("Sign up with apple");
-            navigation.navigate("home");
+            navigation.navigate("signupModal");
           }}
         >
           Continue with Apple
@@ -40,7 +40,7 @@ export default function StartScreen({
           variant="outline"
           onPress={() => {
             console.log("Sign up with google");
-            navigation.navigate("home");
+            navigation.navigate("signupModal");
           }}
         >
           Continue with Google
