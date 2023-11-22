@@ -18,6 +18,9 @@
     "preview": {
       "dependsOn": ["build"]
     },
+    "start": {
+      "dependsOn": ["build"]
+    },
     "test": {}
   }
 }
