@@ -9,6 +9,7 @@ import { Colors } from "config/colors";
 // General screen imports
 import StartScreen from "./screens/start-screen";
 import HomeScreen from "./screens/home-screen";
+import InboxScreen from "./screens/inbox-screen";
 
 // Components imports
 import HeaderSettingsIcon from "./components/header-settings-icon";
@@ -16,6 +17,7 @@ import HeaderSettingsIcon from "./components/header-settings-icon";
 export type stackParamsList = {
   start: undefined;
   home: undefined;
+  inbox: { userId: string };
 };
 
 const Stack = createNativeStackNavigator<stackParamsList>();
@@ -47,6 +49,12 @@ export default function App() {
                 return <HeaderSettingsIcon tintColor={tintColor} />;
               },
             }}
+          />
+          <Stack.Screen 
+            name = "inbox"
+            component={InboxScreen}
+            options ={{title: "All tasks"}}
+            initialParams={{userId: "some_dummy_id_for_now"}}
           />
         </Stack.Navigator>
       </NavigationContainer>

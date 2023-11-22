@@ -17,7 +17,11 @@ export default function HomeScreen({
       <StatusBar style="light" />
       <View style={styles.rootContainer}>
         <Text>HomeScreen</Text>
-        <Button onPress={() => {}}>View tasks in inbox</Button>
+        <Button
+          onPress={() => navigation.navigate("inbox", { userId: "Mathew" })}
+        >
+          View tasks in inbox
+        </Button>
         <Button variant="outline" onPress={() => navigation.navigate("start")}>
           Back to start page
         </Button>
