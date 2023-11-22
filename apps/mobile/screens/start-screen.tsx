@@ -1,9 +1,17 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import { type NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Colors } from "config/colors";
 
 import Button from "../components/ui/button";
+import { type stackParamsList } from "../App";
 
-export default function StartScreen() {
+type propTypes = NativeStackScreenProps<stackParamsList, "start">;
+
+export default function StartScreen({
+  navigation,
+}: {
+  navigation: propTypes["navigation"];
+}) {
   return (
     <View style={styles.screen}>
       <Image
@@ -18,10 +26,23 @@ export default function StartScreen() {
         Organize your work and life, finally.
       </Text>
       <View style={styles.buttonContainer}>
-        <Button iconName="ios-logo-apple" onPress={() => {}}>
+        <Button
+          iconName="ios-logo-apple"
+          onPress={() => {
+            console.log("Sign up with apple");
+            navigation.navigate("home");
+          }}
+        >
           Continue with Apple
         </Button>
-        <Button iconName="ios-logo-google" variant="outline" onPress={() => {}}>
+        <Button
+          iconName="ios-logo-google"
+          variant="outline"
+          onPress={() => {
+            console.log("Sign up with google");
+            navigation.navigate("home");
+          }}
+        >
           Continue with Google
         </Button>
         <Text style={styles.mutedText}>More sign-in options</Text>
