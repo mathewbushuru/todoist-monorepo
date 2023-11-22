@@ -16,6 +16,9 @@ import SignupPasswordScreen from "./screens/signup/signup-password-screen";
 import SignupSelectUseScreen from "./screens/signup/signup-selectuse-screen";
 import SignupSelectExperienceScreen from "./screens/signup/signup-selectexperience-screen";
 import SignupProfileScreen from "./screens/signup/signup-profile-screen";
+// Login screen imports
+import LoginEmailScreen from "./screens/login/login-email-screen";
+import LoginPasswordScreen from "./screens/login/login-password-screen";
 
 // Components imports
 import HeaderSettingsIcon from "./components/header-settings-icon";
@@ -25,6 +28,7 @@ export type stackParamsList = {
   home: undefined;
   inbox: { userId: string };
   signupModal: undefined;
+  loginModal: undefined;
 };
 
 export type signupModalParamsList = {
@@ -35,8 +39,14 @@ export type signupModalParamsList = {
   signupProfile: undefined;
 };
 
+export type loginModalParamsList = {
+  loginEmail: undefined;
+  loginPassword: undefined;
+};
+
 const Stack = createNativeStackNavigator<stackParamsList>();
 const SignupModalStack = createNativeStackNavigator<signupModalParamsList>();
+const LoginModalStack = createNativeStackNavigator<loginModalParamsList>();
 
 export default function App() {
   return (
@@ -77,6 +87,11 @@ export default function App() {
             component={SignupModalScreens}
             options={{ headerShown: false, presentation: "modal" }}
           />
+          <Stack.Screen
+            name="loginModal"
+            component={LoginModalScreens}
+            options={{ headerShown: false, presentation: "modal" }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
@@ -90,7 +105,7 @@ function SignupModalScreens() {
         name="signupEmail"
         component={SignupEmailScreen}
       />
-       <SignupModalStack.Screen
+      <SignupModalStack.Screen
         name="signupPassword"
         component={SignupPasswordScreen}
       />
@@ -107,5 +122,17 @@ function SignupModalScreens() {
         component={SignupProfileScreen}
       />
     </SignupModalStack.Navigator>
+  );
+}
+
+function LoginModalScreens() {
+  return (
+    <LoginModalStack.Navigator screenOptions={{ headerShown: false }}>
+      <LoginModalStack.Screen name="loginEmail" component={LoginEmailScreen} />
+      <LoginModalStack.Screen
+        name="loginPassword"
+        component={LoginPasswordScreen}
+      />
+    </LoginModalStack.Navigator>
   );
 }

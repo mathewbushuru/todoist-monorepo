@@ -40,7 +40,7 @@ export default function StartScreen({
           variant="outline"
           onPress={() => {
             console.log("Sign up with google");
-            navigation.navigate("signupModal");
+            navigation.navigate("loginModal");
           }}
         >
           Continue with Google
