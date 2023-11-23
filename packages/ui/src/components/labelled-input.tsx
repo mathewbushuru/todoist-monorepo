@@ -28,7 +28,7 @@ export const LabelledInput = ({
         {label}
       </label>
       <input
-        className={cn("ui-h-7 ui-outline-none", inputClassname)}
+        className={cn("ui-h-7 ui-outline-none ui-font-bold placeholder:ui-font-normal", inputClassname)}
         {...props}
       />
     </div>
