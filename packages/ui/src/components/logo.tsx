@@ -1,6 +1,10 @@
-export function Logo() {
+import { cn } from "../lib/utils";
+
+interface logoInputProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+export function Logo({ ...props }: logoInputProps) {
   return (
-    <>
+    <div className="ui-cursor-pointer" {...props}>
       <div className="ui-hidden sm:ui-block">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +57,6 @@ export function Logo() {
           ></path>
         </svg>
       </div>
-    </>
+    </div>
   );
 }

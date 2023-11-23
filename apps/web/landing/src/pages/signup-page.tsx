@@ -11,7 +11,7 @@ export default function SignupPage() {
   return (
     <div className="flex justify-center">
       <div className="flex max-w-md flex-col gap-4 px-4 py-8 text-foreground">
-        <Logo />
+        <Logo onClick={() => navigate("/")} />
 
         <p className="my-3 text-3xl font-bold">Sign up</p>
 
