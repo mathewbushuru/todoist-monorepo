@@ -1,4 +1,4 @@
-import { Logo, Button, Input } from "ui";
+import { Logo, Button, LabelledInput } from "ui";
 
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
@@ -25,8 +25,16 @@ export default function SignupPage() {
       </Button>
 
       <div className="my-6 space-y-4">
-        <Input type="email" placeholder="Enter your email..." />
-        <Input type="password" placeholder="Enter your password..." />
+        <LabelledInput
+          type="email"
+          placeholder="Enter your email..."
+          label="Email"
+        />
+        <LabelledInput
+          type="password"
+          placeholder="Enter your password..."
+          label="Password"
+        />
       </div>
 
       <Button size="lg" className="text-lg font-semibold">
@@ -39,7 +47,7 @@ export default function SignupPage() {
         <span className="underline">Privacy Policy</span>.
       </p>
 
-      <p className="text-sm leading-5 text-muted text-center mt-4">
+      <p className="mt-4 text-center text-sm leading-5 text-muted">
         Already signed up? <span className="underline">Go to login</span>
       </p>
     </div>
