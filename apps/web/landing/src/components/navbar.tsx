@@ -22,7 +22,11 @@ function Navbar() {
           </Button>
         ))}
         <div className="h-full w-[1.5px] bg-secondary">&nbsp;</div>
-        <Button variant="ghost" className="font-normal tracking-wide">
+        <Button
+          variant="ghost"
+          className="font-normal tracking-wide"
+          onClick={() => navigate("/auth/login")}
+        >
           Log in
         </Button>
         <Button
