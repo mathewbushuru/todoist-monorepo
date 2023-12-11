@@ -15,6 +15,8 @@
     "build:ui": "turbo build --filter=ui",
     "build:server": "turbo build --filter=server",
     "start:server": "turbo start --filter=server",
+    "tdd:server": "turbo tdd --filter=server",
+    "test:server": "turbo test --filter=server",
     "clean:ui": "turbo clean --filter=ui",
     "predeploy": "turbo clean build test"
   },

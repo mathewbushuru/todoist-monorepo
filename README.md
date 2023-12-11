@@ -19,7 +19,7 @@
 
 `Mobile`: React Native, Expo, TypeScript
 
-`Backend` : NodeJS, ExpressJS, TypeScript, Jest, SuperTest
+`Backend` : NodeJS, ExpressJS, TypeScript, SuperTest, Vitest
 
 `Database`: MySQL, PlanetScale
 
