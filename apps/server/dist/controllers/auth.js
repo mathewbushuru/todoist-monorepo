@@ -1,5 +1,6 @@
-import { createUser } from "../database/utils.js";
-import { hashPassword } from "../lib/auth.js";
+import jwt from "jsonwebtoken";
+import { createUser, getUserByEmail } from "../database/utils.js";
+import { hashPassword, checkUserPassword } from "../lib/auth.js";
 /**
  * @desc:       Sign up user
  * @listens:    POST /auth/signup
@@ -39,4 +40,48 @@ export const postSignupController = async (req, res, next) => {
         .catch((err) => {
         return next(err);
     });
+};
+/**
+ * @desc:       Log in user
+ * @listens:    POST /auth/login
+ * @access:     public
+ */
+export const postLoginController = async (req, res, next) => {
+    const loginReqData = req.body;
+    if (!loginReqData.email) {
+        const errorMessage = "Log in error, email is missing";
+        console.error(errorMessage);
+        return res.status(400).json({ errorMessage });
+    }
+    if (!loginReqData.password) {
+        const errorMessage = "Log in error, password is missing";
+        console.error(errorMessage);
+        return res.status(400).json({ errorMessage });
+    }
+    const userData = await getUserByEmail(loginReqData.email);
+    if (!userData) {
+        const errorMessage = "Log in error, no such user";
+        return res.status(401).json({ errorMessage });
+    }
+    const { hashedPassword, ...userDataWithoutPassword } = userData;
+    const passwordMatches = await checkUserPassword(loginReqData.password, hashedPassword);
+    if (!passwordMatches) {
+        const errorMessage = "Log in error, wrong password";
+        return res.status(401).json({ errorMessage });
+    }
+    console.log("Log in successful");
+    const secondsToExpire = 24 * 60 * 60;
+    const jwtToken = jwt.sign({ userId: userDataWithoutPassword.id }, process.env.JWT_SECRET_KEY, { algorithm: "HS256", expiresIn: secondsToExpire });
+    const successfulLoginResponse = {
+        ...userDataWithoutPassword,
+        message: "Log in successful",
+        jwtToken,
+        teamAccount: userDataWithoutPassword.teamAccount === 1 ? "yes" : "no",
+        usageMode: userDataWithoutPassword.usageMode === 2
+            ? "education"
+            : userDataWithoutPassword.usageMode === 1
+                ? "work"
+                : "personal",
+    };
+    return res.json(successfulLoginResponse);
 };
