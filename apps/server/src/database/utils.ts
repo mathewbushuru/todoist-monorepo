@@ -9,8 +9,8 @@ interface dbUserType {
   fullName: string;
   usageMode: 0 | 1 | 2;
   teamAccount: 0 | 1;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export async function createUser(
@@ -30,7 +30,7 @@ export async function createUser(
         hashedPassword,
         fullName,
         usageMode === "education" ? 2 : usageMode === "work" ? 1 : 0,
-        teamAccount === "true" ? 1 : 0,
+        teamAccount === "yes" ? 1 : 0,
       ]
     );
     const id = response[0].insertId;
@@ -56,7 +56,6 @@ export async function getUserById(id: number) {
       [id]
     );
     const usersArr = dbResponse[0] as unknown as dbUserType[];
-    console.log(usersArr);
     let user: dbUserType | null;
     if (usersArr.length > 0) {
       user = usersArr[0];
@@ -66,5 +65,28 @@ export async function getUserById(id: number) {
     return user;
   } catch (error: any) {
     throw new Error(error.message || "Error getting user");
+  }
+}
+
+export async function getUserByEmail(email: string) {
+  try {
+    const dbResponse = await dbPool.query(
+      `
+                SELECT * FROM todoist_users WHERE email=?
+            `,
+      [email]
+    );
+
+    const usersArr = dbResponse[0] as unknown as dbUserType[];
+    let user: dbUserType | null;
+    if (usersArr.length > 0) {
+      user = usersArr[0];
+    } else {
+      user = null;
+    }
+
+    return user;
+  } catch (error: any) {
+    throw new Error(error.message || "Error getting user with email.");
   }
 }
