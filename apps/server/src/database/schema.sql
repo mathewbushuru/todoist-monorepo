@@ -17,7 +17,7 @@ CREATE TABLE todoist_users (
     `email` VARCHAR(255) NOT NULL UNIQUE,
     `hashedPassword` VARCHAR(255) NOT NULL,
     `fullName` VARCHAR(255) NOT NULL,
-    -- personal, work, education
+    -- personal(0), work(1), education(2)
     `usageMode` SMALLINT  DEFAULT(0),
     `teamAccount` BOOLEAN DEFAULT(0),
     `createdAt` TIMESTAMP NOT NULL DEFAULT(now()),
