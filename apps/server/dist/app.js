@@ -5,7 +5,7 @@ import cors from "cors";
 import "dotenv/config";
 // Routes imports
 import authRoutes from "./routes/auth.js";
-import testRoutes from "./routes/test.js";
+import testRoutes from "./routes/test-routes.js";
 const app = express();
 // Middleware
 app.use(cors());
