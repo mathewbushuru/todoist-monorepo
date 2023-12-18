@@ -20,7 +20,7 @@ export const LabelledInput = ({
   return (
     <div
       className={cn(
-        "ui-grid ui-gap-1 ui-rounded-lg ui-px-3 ui-py-2 ui-border",
+        "ui-grid ui-gap-1 ui-rounded-lg ui-px-3 ui-py-2 ui-border focus-within:ui-border-secondary-foreground",
         containerClassname
       )}
     >
