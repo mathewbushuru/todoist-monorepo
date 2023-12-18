@@ -17,7 +17,7 @@ export async function createUser(email, hashedPassword, fullName, usageMode, tea
         let customErrorMessage;
         if (error.message && error.message.startsWith("Duplicate entry")) {
             customErrorMessage =
-                "Cannot create user, email address is already registered.";
+                "Oh no, this email address is unavailable! Please try a different address.";
         }
         throw new Error(customErrorMessage || "Error creating user in database");
     }

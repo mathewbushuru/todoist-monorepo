@@ -25,6 +25,12 @@ export default function LoginPage() {
       return;
     }
 
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!emailRegex.test(email)) {
+      setEmailHasError(true);
+      return;
+    }
+
     setEmailHasError(false);
 
     if (password.length === 0) {
