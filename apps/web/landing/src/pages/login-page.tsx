@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo, Button, LabelledInput } from "ui";
 
@@ -5,13 +6,63 @@ import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
 
+const loginUrl = "http://localhost:5000/auth/login";
+
 export default function LoginPage() {
   const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [emailHasError, setEmailHasError] = useState(false);
+  const [passwordHasError, setPasswordHasError] = useState(false);
+
+  const [loginErrorMessage, setLoginErrorMessage] = useState("");
+
+  const handleLogin = async () => {
+    if (email.length === 0) {
+      setEmailHasError(true);
+      return;
+    }
+
+    setEmailHasError(false);
+
+    if (password.length === 0) {
+      setPasswordHasError(true);
+      return;
+    }
+
+    setPasswordHasError(false);
+
+    const response = await fetch(loginUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const loginResponse = await response.json();
+    console.log(loginResponse);
+
+    if (!response.ok) {
+      setLoginErrorMessage("Wrong email or password");
+      setEmail("");
+      setPassword("");
+      return;
+    }
+
+    setLoginErrorMessage("");
+    console.log("Login successful");
+  };
 
   return (
     <div className="flex justify-center">
       <div className="flex max-w-md flex-col gap-4 px-4 py-8 text-foreground">
-        <Logo onClick={() => navigate("/")}/>
+        <Logo onClick={() => navigate("/")} />
 
         <p className="my-3 text-3xl font-bold">Log in</p>
 
@@ -29,19 +80,35 @@ export default function LoginPage() {
         </Button>
 
         <div className="my-6 space-y-4">
+          {loginErrorMessage.length > 0 && (
+            <p className="text-xs font-light text-primary">
+              {loginErrorMessage}
+            </p>
+          )}
+
           <LabelledInput
             type="email"
             placeholder="Enter your email..."
             label="Email"
+            inputContent={email}
+            onInputContentChange={setEmail}
+            hasError={emailHasError}
           />
           <LabelledInput
             type="password"
             placeholder="Enter your password..."
             label="Password"
+            inputContent={password}
+            onInputContentChange={setPassword}
+            hasError={passwordHasError}
           />
         </div>
 
-        <Button size="lg" className="text-lg font-semibold">
+        <Button
+          size="lg"
+          className="text-lg font-semibold"
+          onClick={handleLogin}
+        >
           Log in
         </Button>
 
