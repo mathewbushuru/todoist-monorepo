@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "turbo dev --no-cache",
     "dev:landing": "turbo dev --filter=landing --filter=ui --filter=server",
+    "dev:next": "turbo dev --filter=next --filter=ui",
     "dev:mobile": "turbo dev --filter=mobile",
     "dev:server": "turbo dev --filter=server",
     "build": "turbo build",

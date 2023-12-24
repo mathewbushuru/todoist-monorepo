@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Todoist',
+  title: 'Todoist | A To-Do List to Organize Your Work & Life<',
   description: 'Full stack clone of Todoist.com - React, React Native, Express, MySQL',
 }
 
