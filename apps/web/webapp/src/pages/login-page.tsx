@@ -68,7 +68,9 @@ export default function LoginPage() {
   return (
     <div className="flex justify-center">
       <div className="flex max-w-md flex-col gap-4 px-4 py-8 text-foreground">
-        <Logo onClick={() => navigate("/")} />
+        <a href="https://todoist.mathewbushuru.com/">
+          <Logo />
+        </a>
 
         <p className="my-3 text-3xl font-bold">Log in</p>
 

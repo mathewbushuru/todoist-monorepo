@@ -25,7 +25,11 @@ function Navbar() {
               Log in
             </Button>
           </a>
-          <Button className="font-normal tracking-wide">Start for free</Button>
+          <a href="https://todoistapp.mathewbushuru.com/auth/signup">
+            <Button className="font-normal tracking-wide">
+              Start for free
+            </Button>
+          </a>
         </div>
       </div>
     </div>

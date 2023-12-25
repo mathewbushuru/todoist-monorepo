@@ -10,9 +10,11 @@ function HeroSection() {
         Become focused, organized, and calm with Todoist. The world's #1 task
         manager and to-do list app.
       </div>
-      <Button className="mb-2 mt-2 font-normal tracking-wide sm:mb-0 sm:mt-4 sm:h-12">
-        Start for free
-      </Button>
+      <a href="https://todoistapp.mathewbushuru.com/auth/signup">
+        <Button className="mb-2 mt-2 font-normal tracking-wide sm:mb-0 sm:mt-4 sm:h-12">
+          Start for free
+        </Button>
+      </a>
       <img src="/hero.avif" alt="hero image" className="lg:max-w-5xl" />
     </div>
   );

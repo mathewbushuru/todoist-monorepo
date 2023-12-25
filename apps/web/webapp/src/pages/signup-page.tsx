@@ -67,7 +67,7 @@ export default function SignupPage() {
     const signupResponse = await response.json();
     console.log(signupResponse);
 
-    if(!response.ok){
+    if (!response.ok) {
       setSignupErrorMessage(signupResponse.errorMessage);
       return;
     }
@@ -78,7 +78,9 @@ export default function SignupPage() {
   return (
     <div className="flex justify-center">
       <div className="flex max-w-md flex-col gap-4 px-4 py-8 text-foreground">
-        <Logo onClick={() => navigate("/")} />
+        <a href="https://todoist.mathewbushuru.com/">
+          <Logo />
+        </a>
 
         <p className="my-3 text-3xl font-bold">Sign up</p>
 
@@ -96,7 +98,7 @@ export default function SignupPage() {
         </Button>
 
         <div className="my-6 space-y-4">
-        {signupErrorMessage.length > 0 && (
+          {signupErrorMessage.length > 0 && (
             <p className="text-xs font-light text-primary">
               {signupErrorMessage}
             </p>
