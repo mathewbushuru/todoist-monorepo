@@ -1,0 +1,2 @@
+- Landing / marketing page built with React + Vite
+- First page a new customer would see

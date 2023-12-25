@@ -7,7 +7,7 @@ import LoginPage from "./pages/login-page";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <LoginPage />,
   },
   {
     path: "/auth/signup",
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/auth/login",
     element: <LoginPage />
+  },
+  {
+    path: "/home",
+    element: <HomePage />
   }
 ]);
 
