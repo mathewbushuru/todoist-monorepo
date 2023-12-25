@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ui": "*",
+    "@reduxjs/toolkit": "^2.0.1",
     "config": "*",
     "lucide-react": "^0.292.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.19.0"
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.19.0",
+    "ui": "*"
   },
   "devDependencies": {
     "@types/node": "^20.9.1",
