@@ -5,6 +5,7 @@ import { Logo, Button, LabelledInput } from "ui";
 import { type User } from "@/types/auth";
 import { useAppDispatch } from "@/store/store";
 import { setCredentials } from "@/store/features/auth-slice";
+import { useGetRootQuery } from "@/api";
 
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
@@ -24,6 +25,9 @@ export default function LoginPage() {
   const [passwordHasError, setPasswordHasError] = useState(false);
 
   const [loginErrorMessage, setLoginErrorMessage] = useState("");
+
+  // ping API in case it has spin down due to inactivity, so that it's ready for login
+  const { data: _ } = useGetRootQuery();
 
   const handleLogin = async () => {
     if (email.length === 0) {
