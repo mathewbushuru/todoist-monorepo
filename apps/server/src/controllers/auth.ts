@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { createUser, getUserByEmail } from "../database/utils.js";
 import { hashPassword, checkUserPassword } from "../lib/auth.js";
 
-export interface signupDataType {
+export interface SignupRequestType {
   email: string;
   password: string;
   fullName: string;
@@ -12,12 +12,12 @@ export interface signupDataType {
   usageMode: "personal" | "work" | "education";
 }
 
-interface loginDataType {
+interface LoginRequestType {
   email: string;
   password: string;
 }
 
-interface loginResponseType {
+interface LoginSuccessResponseType {
   message: string;
   jwtToken: string;
   id: number;
@@ -33,13 +33,14 @@ interface loginResponseType {
  * @desc:       Sign up user
  * @listens:    POST /auth/signup
  * @access:     public
+ * @param:      req, res, next
  */
 export const postSignupController = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const signupReqData = req.body as signupDataType;
+  const signupReqData = req.body as SignupRequestType;
 
   // simple missing data validation
   if (!signupReqData.email) {
@@ -87,13 +88,14 @@ export const postSignupController = async (
  * @desc:       Log in user
  * @listens:    POST /auth/login
  * @access:     public
+ * @param:      req, res, next
  */
 export const postLoginController = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const loginReqData = req.body as loginDataType;
+  const loginReqData = req.body as LoginRequestType;
 
   if (!loginReqData.email) {
     const errorMessage = "Log in error, email is missing";
@@ -135,7 +137,7 @@ export const postLoginController = async (
     { algorithm: "HS256", expiresIn: secondsToExpire }
   );
 
-  const successfulLoginResponse: loginResponseType = {
+  const successfulLoginResponse: LoginSuccessResponseType = {
     ...userDataWithoutPassword,
     message: "Log in successful",
     jwtToken,

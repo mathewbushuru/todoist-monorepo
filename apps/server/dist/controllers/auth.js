@@ -5,6 +5,7 @@ import { hashPassword, checkUserPassword } from "../lib/auth.js";
  * @desc:       Sign up user
  * @listens:    POST /auth/signup
  * @access:     public
+ * @param:      req, res, next
  */
 export const postSignupController = async (req, res, next) => {
     const signupReqData = req.body;
@@ -45,6 +46,7 @@ export const postSignupController = async (req, res, next) => {
  * @desc:       Log in user
  * @listens:    POST /auth/login
  * @access:     public
+ * @param:      req, res, next
  */
 export const postLoginController = async (req, res, next) => {
     const loginReqData = req.body;

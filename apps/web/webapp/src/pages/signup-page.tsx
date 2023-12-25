@@ -2,20 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo, Button, LabelledInput } from "ui";
 
+import { type SignupRequestType } from "@/types/auth";
+
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
 
 const signupUrl = "https://todoist-d3gq.onrender.com/auth/signup";
 // const signupUrl = "http://localhost:5000/auth/signup";
-
-interface signupDataType {
-  email: string;
-  password: string;
-  fullName: string;
-  teamAccount: "yes" | "no";
-  usageMode: "personal" | "work" | "education";
-}
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -49,7 +43,7 @@ export default function SignupPage() {
 
     setPasswordHasError(false);
 
-    const signupData: signupDataType = {
+    const signupData: SignupRequestType = {
       email,
       password,
       fullName: email[0].toUpperCase(),
@@ -75,7 +69,7 @@ export default function SignupPage() {
 
     console.log("sign up successful");
 
-    navigate("/auth/login")
+    navigate("/auth/login");
   };
 
   return (

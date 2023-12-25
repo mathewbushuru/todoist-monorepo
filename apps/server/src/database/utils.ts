@@ -1,6 +1,6 @@
 import dbPool from "./index.js";
 
-import { signupDataType } from "../controllers/auth.js";
+import { type SignupRequestType } from "../controllers/auth.js";
 
 interface dbUserType {
   id: number;
@@ -14,11 +14,11 @@ interface dbUserType {
 }
 
 export async function createUser(
-  email: signupDataType["email"],
-  hashedPassword: signupDataType["password"],
-  fullName: signupDataType["fullName"],
-  usageMode: signupDataType["usageMode"],
-  teamAccount: signupDataType["teamAccount"]
+  email: SignupRequestType["email"],
+  hashedPassword: SignupRequestType["password"],
+  fullName: SignupRequestType["fullName"],
+  usageMode: SignupRequestType["usageMode"],
+  teamAccount: SignupRequestType["teamAccount"]
 ) {
   try {
     const response: any = await dbPool.query(

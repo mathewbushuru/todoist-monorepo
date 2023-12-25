@@ -37,7 +37,7 @@
 
 Note that the backend is deployed on serverless architecture so it faces cold start if the app has spin down due to inactivity.
 
-##### Progress - web:landing
+##### Progress - app:web/landing
 
 Desktop
 
@@ -47,6 +47,6 @@ Tablet, Mobile
 
 ![Mobile](./.github/docs/ipadIphoneProgress.jpg) 
 
-##### Progress - mobile
+##### Progress - app:mobile
 
 https://github.com/mathewbushuru/todoist-monorepo/assets/29956810/537df352-07f6-43f0-b492-3221007d1c5d
