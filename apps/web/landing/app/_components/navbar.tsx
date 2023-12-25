@@ -20,9 +20,11 @@ function Navbar() {
             </Button>
           ))}
           <div className="h-full w-[1.5px] bg-secondary">&nbsp;</div>
-          <Button variant="ghost" className="font-normal tracking-wide">
-            Log in
-          </Button>
+          <a href="https://todoistapp.mathewbushuru.com/auth/login">
+            <Button variant="ghost" className="font-normal tracking-wide">
+              Log in
+            </Button>
+          </a>
           <Button className="font-normal tracking-wide">Start for free</Button>
         </div>
       </div>
