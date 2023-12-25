@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo, Button, LabelledInput } from "ui";
 
+import { type User } from "@/types/auth";
+import { useAppDispatch } from "@/store/store";
+import { setCredentials } from "@/store/features/auth-slice";
+
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
@@ -10,6 +14,7 @@ const loginUrl = "http://localhost:5000/auth/login";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,6 +68,18 @@ export default function LoginPage() {
 
     setLoginErrorMessage("");
     console.log("Login successful");
+
+    const user: User = {
+      id: loginResponse.id,
+      email: loginResponse.email,
+      fullName: loginResponse.fullName,
+      teamAccount: loginResponse.teamAccount,
+      usageMode: loginResponse.usageMode,
+      createdAt: loginResponse.createdAt,
+      updatedAt: loginResponse.updatedAt,
+    };
+
+    dispatch(setCredentials({ user, token: loginResponse.jwtToken }));
   };
 
   return (
