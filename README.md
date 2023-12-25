@@ -4,13 +4,13 @@
 
  The monorepo includes the following apps and packages:
 
- - `apps/web/landing`: A 100% static website built using NextJS using its Static Site Generation feature. At build time all React components are rendered as HTML preventing the users from downloading unnecessary JavaScript. This makes the site faster and improves SEO. This would be the first site a new user would see, e.g deployed on todoist.com
+ - `apps/web/landing`: A 100% static website built with NextJS using its Static Site Generation feature. At build time all React components are rendered as HTML preventing the users from downloading unnecessary JavaScript. This makes the site faster and improves SEO. This would be the first site a new user would see, e.g deployed on todoist.com
 
  - `apps/web/webapp`: A React Single Page Application built with Vite. Since it's behind an auth screen, SEO is no longer necessary here. This is what logged in users see e.g deployed on app.todoist.com
 
  - `apps/mobile`: A React Native mobile app for Android and iOS devices.
 
- - `apps/server`: An Express sercer application for the backend API that serves the mobile apps and websites, and connects them to a MySQL database.
+ - `apps/server`: An Express server application for the backend API that serves the mobile app and websites, and connects them to a MySQL database.
 
  - `packages/ui`: A React component library package shared by  the web and mobile apps.
  

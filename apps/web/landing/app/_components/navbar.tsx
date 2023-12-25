@@ -6,7 +6,7 @@ const navItems = ["Features", "Templates", "For Teams", "Resources", "Pricing"];
 function Navbar() {
   return (
     <div className="fixed left-0 right-0 top-0 border-b bg-background lg:border-b-0  lg:px-8  ">
-      <div className="mx-auto flex items-center justify-between p-4 xl:max-w-7xl xl:px-16 ">
+      <div className="mx-auto flex items-center justify-between p-4 xl:max-w-7xl xl:px-16 2xl:max-w-[100rem]">
         <Logo />
         <MenuIcon className="lg:hidden" />
         <div className="hidden lg:flex lg:items-center xl:gap-3">

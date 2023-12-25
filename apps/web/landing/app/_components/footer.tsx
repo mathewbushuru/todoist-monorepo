@@ -1,20 +1,21 @@
 import {
-    ChevronRightIcon,
-    TwitterIcon,
-    YoutubeIcon,
-    FacebookIcon,
-    InstagramIcon,
-  } from "lucide-react";
-  
-  function Footer() {
-    return (
-      <>
-        {/* Footer  */}
-        <div className=" bg-footer pb-8 pl-14 pt-8 tracking-tight text-popover-foreground sm:flex sm:justify-between ">
+  ChevronRightIcon,
+  TwitterIcon,
+  YoutubeIcon,
+  FacebookIcon,
+  InstagramIcon,
+} from "lucide-react";
+
+function Footer() {
+  return (
+    <>
+      {/* Footer  */}
+      <div className=" bg-footer ">
+        <div className="mx-auto pb-8 pl-14 pt-8 tracking-tight text-popover-foreground sm:flex sm:justify-between xl:max-w-7xl 2xl:max-w-[100rem]">
           <div className="max-w-xs pr-12 text-lg leading-6 tracking-normal sm:pt-8">
             Join millions of people who organize work and life with Todoist.
           </div>
-  
+
           <div>
             <div className="pb-4 pt-8 font-bold">Features</div>
             <div className="flex items-center justify-between pb-2 pr-10">
@@ -34,7 +35,7 @@ import {
               <ChevronRightIcon className="w-5 sm:hidden" />
             </div>
           </div>
-  
+
           <div>
             <div className="pb-4 pt-8 font-bold">Resources</div>
             <div className="flex items-center justify-between pb-2 pr-10">
@@ -66,7 +67,7 @@ import {
               <ChevronRightIcon className="w-5 sm:hidden" />
             </div>
           </div>
-  
+
           <div>
             <div className="pb-4 pt-8 font-bold">Company</div>
             <div className="flex items-center justify-between pb-2 pr-10">
@@ -90,7 +91,7 @@ import {
               <ChevronRightIcon className="w-5 sm:hidden" />
             </div>
           </div>
-  
+
           <div className="flex gap-6 pb-4 pt-8 sm:flex-col sm:pr-10 lg:pr-14">
             <TwitterIcon className="w-6" />
             <YoutubeIcon className="w-6" />
@@ -98,9 +99,9 @@ import {
             <InstagramIcon className="w-6" />
           </div>
         </div>
-      </>
-    );
-  }
-  
-  export default Footer;
-  
+      </div>
+    </>
+  );
+}
+
+export default Footer;
