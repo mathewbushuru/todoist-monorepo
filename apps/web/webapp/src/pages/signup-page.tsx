@@ -6,7 +6,8 @@ import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
 
-const signupUrl = "http://localhost:5000/auth/signup";
+const signupUrl = "https://todoist-d3gq.onrender.com/auth/signup";
+// const signupUrl = "http://localhost:5000/auth/signup";
 
 interface signupDataType {
   email: string;
@@ -51,7 +52,7 @@ export default function SignupPage() {
     const signupData: signupDataType = {
       email,
       password,
-      fullName: email[0],
+      fullName: email[0].toUpperCase(),
       teamAccount: "no",
       usageMode: "personal",
     };
@@ -73,6 +74,8 @@ export default function SignupPage() {
     }
 
     console.log("sign up successful");
+
+    navigate("/auth/login")
   };
 
   return (

@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "turbo dev --no-cache",
-    "dev:landing": "turbo dev --filter=landing --filter=ui --filter=server",
-    "dev:webapp": "turbo dev --filter=webapp --filter=ui --filter=server",
+    "dev:landing": "turbo dev --filter=landing --filter=ui",
+    "dev:webapp": "turbo dev --filter=webapp --filter=ui",
     "dev:mobile": "turbo dev --filter=mobile",
     "dev:server": "turbo dev --filter=server",
     "build": "turbo build",

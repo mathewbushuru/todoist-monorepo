@@ -10,7 +10,8 @@ import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
 
-const loginUrl = "http://localhost:5000/auth/login";
+const loginUrl = "https://todoist-d3gq.onrender.com/auth/login";
+// const loginUrl = "http://localhost:5000/auth/login";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -78,6 +79,8 @@ export default function LoginPage() {
       createdAt: loginResponse.createdAt,
       updatedAt: loginResponse.updatedAt,
     };
+
+    navigate("/");
 
     dispatch(setCredentials({ user, token: loginResponse.jwtToken }));
   };

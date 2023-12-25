@@ -18,6 +18,13 @@
 
  I am using `Yarn workspaces` and `Turborepo` for the monorepo. For the UI library package, I am using `esbuild` and `tsup` to bundle the React UI components into esm, cjs and dts types so that they can be reshared among the apps by importing and using them like we would use any other NPM package.
 
+ ##### Demo credentials
+
+ Email: `matt@test.com`
+
+ Password: `tester123`
+
+
  ##### Tech stack
 
 `Web` : ReactJS, NextJS, Vite, TypeScript, TailwindCSS, Redux, RTK Query, Vitest
