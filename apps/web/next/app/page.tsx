@@ -1,5 +1,10 @@
+
+import Navbar from "@/app/_components/navbar";
+
 export default function Home() {
   return (
-    <main className="text-cyan-500 xl:text-primary">Todoist Landing Page</main>
+    <main className="bg-background">
+      <Navbar />
+    </main>
   );
 }
