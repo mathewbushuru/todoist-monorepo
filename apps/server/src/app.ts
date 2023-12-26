@@ -8,6 +8,15 @@ import "dotenv/config";
 import authRoutes from "./routes/auth.js";
 import testRoutes from "./routes/test-routes.js";
 
+// Extend express request type
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: number;
+    }
+  }
+}
+
 const app = express();
 
 // Middleware
@@ -21,7 +30,6 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.use("/auth", authRoutes);
-
 app.use("/test", testRoutes);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -33,12 +41,10 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use((error: any, req: Request, res: Response, next: NextFunction) => {
   console.error(error);
 
-  return res
-    .status(500)
-    .json({
-      errorMessage: error.message || "Something went wrong...",
-      ...error,
-    });
+  return res.status(500).json({
+    errorMessage: error.message || "Something went wrong...",
+    ...error,
+  });
 });
 
 export default app;
