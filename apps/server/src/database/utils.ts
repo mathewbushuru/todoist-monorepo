@@ -38,9 +38,11 @@ export async function createUser(
   } catch (error: any) {
     let customErrorMessage: undefined | string;
 
-    console.log(error);
-
-    if (error.message && error.message.startsWith("Duplicate entry")) {
+    if (
+      error.message &&
+      (error.code === "ER_DUP_ENTRY" ||
+        error.message.startsWith("Duplicate entry"))
+    ) {
       customErrorMessage =
         "Oh no, this email address is unavailable! Please try a different address.";
     }
