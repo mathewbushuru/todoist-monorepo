@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Logo, Button, LabelledInput } from "ui";
 
 import { type SignupRequestType } from "@/types/auth";
+import { useGetRootQuery, useSignupMutation } from "@/api";
 
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
-
-const signupUrl = "https://todoist-d3gq.onrender.com/auth/signup";
-// const signupUrl = "http://localhost:5000/auth/signup";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -21,6 +19,11 @@ export default function SignupPage() {
   const [passwordHasError, setPasswordHasError] = useState(false);
 
   const [signupErrorMessage, setSignupErrorMessage] = useState("");
+
+  // ping API in case it has spin down due to inactivity, so that it's ready for signup
+  const { data: _ } = useGetRootQuery();
+
+  const [signupTrigger, { isLoading }] = useSignupMutation();
 
   const handleSignup = async () => {
     if (email.length === 0) {
@@ -51,25 +54,21 @@ export default function SignupPage() {
       usageMode: "personal",
     };
 
-    const response = await fetch(signupUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(signupData),
-    });
+    try {
+      const signupResponse = await signupTrigger(signupData).unwrap();
+      console.log(signupResponse);
 
-    const signupResponse = await response.json();
-    console.log(signupResponse);
+      setSignupErrorMessage("");
+      console.log("Sign up successful");
 
-    if (!response.ok) {
-      setSignupErrorMessage(signupResponse.errorMessage);
+      navigate("/auth/login");
+    } catch (error: any) {
+      console.log(error);
+      setSignupErrorMessage(
+        error.data.errorMessage || "Sign up error, try again",
+      );
       return;
     }
-
-    console.log("sign up successful");
-
-    navigate("/auth/login");
   };
 
   return (
@@ -123,6 +122,7 @@ export default function SignupPage() {
           size="lg"
           className="text-lg font-semibold"
           onClick={handleSignup}
+          disabled={isLoading}
         >
           Sign up with email
         </Button>

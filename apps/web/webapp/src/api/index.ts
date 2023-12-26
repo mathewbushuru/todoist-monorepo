@@ -3,9 +3,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { type RootState } from "@/store/store";
 import {
   type LoginRequestType,
-  // type SignupRequestType,
   type LoginSuccessResponseType,
-  // type ServerErrorResponseType,
+  type SignupRequestType,
+  type User,
 } from "@/types/auth";
 
 const SERVER_URL = "https://todoist-d3gq.onrender.com";
@@ -16,7 +16,7 @@ const todoistApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: SERVER_URL,
     prepareHeaders: (headers, { getState }) => {
-      // if we have token in the redux store, use it for all authenticated requests
+      // if we have token in the store, use it for all authenticated requests
       const token = (getState() as RootState).auth.token;
       if (token) {
         headers.set("authorization", `Bearer ${token}`);
@@ -37,9 +37,18 @@ const todoistApi = createApi({
       }),
       invalidatesTags: [],
     }),
+    signup: builder.mutation<User & { message: string }, SignupRequestType>({
+      query: (signupData) => ({
+        url: "/auth/signup",
+        method: "POST",
+        body: signupData,
+      }),
+      invalidatesTags: [],
+    }),
   }),
 });
 
-export const { useGetRootQuery, useLoginMutation } = todoistApi;
+export const { useGetRootQuery, useLoginMutation, useSignupMutation } =
+  todoistApi;
 
 export default todoistApi;
