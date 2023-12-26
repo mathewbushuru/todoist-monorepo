@@ -6,7 +6,7 @@ import "dotenv/config";
 
 // Routes imports
 import authRoutes from "./routes/auth.js";
-import testRoutes from "./routes/test-routes.js";
+import testRoutes from "./routes/test.js";
 
 // Extend express request type
 declare global {

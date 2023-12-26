@@ -3,7 +3,6 @@ import { type Request, type Response, type NextFunction } from "express";
 
 /**
  * @desc:       Verify if JWT token is valid; after middleware, request object will have userId property.
- * @listens:    GET /auth/verify-token
  * @access:     public
  * @param:      req, res, next
  */
