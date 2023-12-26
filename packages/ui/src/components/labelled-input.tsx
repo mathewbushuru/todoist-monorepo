@@ -33,7 +33,10 @@ export const LabelledInput = ({
           hasError && "ui-border-primary focus-within:ui-border-primary"
         )}
       >
-        <label className={cn("ui-text-sm ui-text-foreground", labelClassname)}>
+        <label
+          className={cn("ui-text-sm ui-text-foreground", labelClassname)}
+          htmlFor={label}
+        >
           {label}
         </label>
         <input
@@ -43,6 +46,8 @@ export const LabelledInput = ({
           )}
           value={inputContent}
           onChange={(e) => onInputContentChange(e.target.value)}
+          id={label}
+          autoComplete="on"
           {...props}
         />
       </div>

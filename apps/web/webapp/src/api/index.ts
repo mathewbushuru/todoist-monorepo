@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import { type RootState } from "@/store/store";
-// import {
-//   type LoginRequestType,
-//   type SignupRequestType,
-//   type LoginSuccessResponseType,
-// } from "@/types/auth";
+import {
+  type LoginRequestType,
+  // type SignupRequestType,
+  type LoginSuccessResponseType,
+  // type ServerErrorResponseType,
+} from "@/types/auth";
 
 const SERVER_URL = "https://todoist-d3gq.onrender.com";
 // const SERVER_URL = "http://localhost:5000";
@@ -28,9 +29,17 @@ const todoistApi = createApi({
     getRoot: builder.query<string, void>({
       query: () => `/`,
     }),
+    login: builder.mutation<LoginSuccessResponseType, LoginRequestType>({
+      query: (credentials) => ({
+        url: "/auth/login",
+        method: "POST",
+        body: credentials,
+      }),
+      invalidatesTags: [],
+    }),
   }),
 });
 
-export const { useGetRootQuery } = todoistApi;
+export const { useGetRootQuery, useLoginMutation } = todoistApi;
 
 export default todoistApi;

@@ -2,17 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo, Button, LabelledInput } from "ui";
 
-import { type User } from "@/types/auth";
+import { type LoginRequestType } from "@/types/auth";
 import { useAppDispatch } from "@/store/store";
 import { setCredentials } from "@/store/features/auth-slice";
-import { useGetRootQuery } from "@/api";
+import { useGetRootQuery, useLoginMutation } from "@/api";
 
 import GoogleIcon from "@/assets/google-icon";
 import FacebookIcon from "@/assets/facebook-icon";
 import AppleIcon from "@/assets/apple-icon";
-
-const loginUrl = "https://todoist-d3gq.onrender.com/auth/login";
-// const loginUrl = "http://localhost:5000/auth/login";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -28,6 +25,8 @@ export default function LoginPage() {
 
   // ping API in case it has spin down due to inactivity, so that it's ready for login
   const { data: _ } = useGetRootQuery();
+
+  const [loginTrigger, { isLoading }] = useLoginMutation();
 
   const handleLogin = async () => {
     if (email.length === 0) {
@@ -50,43 +49,26 @@ export default function LoginPage() {
 
     setPasswordHasError(false);
 
-    const response = await fetch(loginUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    const loginData: LoginRequestType = { email, password };
 
-    const loginResponse = await response.json();
-    console.log(loginResponse);
+    try {
+      const loginResponse = await loginTrigger(loginData).unwrap();
+      console.log(loginResponse);
 
-    if (!response.ok) {
+      setLoginErrorMessage("");
+      console.log("Login successful");
+
+      const { jwtToken, message: _, ...user } = loginResponse;
+
+      navigate("/");
+      dispatch(setCredentials({ user, token: jwtToken }));
+    } catch (error) {
+      console.log(error);
       setLoginErrorMessage("Wrong email or password");
       setEmail("");
       setPassword("");
       return;
     }
-
-    setLoginErrorMessage("");
-    console.log("Login successful");
-
-    const user: User = {
-      id: loginResponse.id,
-      email: loginResponse.email,
-      fullName: loginResponse.fullName,
-      teamAccount: loginResponse.teamAccount,
-      usageMode: loginResponse.usageMode,
-      createdAt: loginResponse.createdAt,
-      updatedAt: loginResponse.updatedAt,
-    };
-
-    navigate("/");
-
-    dispatch(setCredentials({ user, token: loginResponse.jwtToken }));
   };
 
   return (
@@ -140,6 +122,7 @@ export default function LoginPage() {
           size="lg"
           className="text-lg font-semibold"
           onClick={handleLogin}
+          disabled={isLoading}
         >
           Log in
         </Button>
