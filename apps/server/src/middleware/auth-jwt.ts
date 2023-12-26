@@ -7,7 +7,7 @@ import { type Request, type Response, type NextFunction } from "express";
  * @access:     public
  * @param:      req, res, next
  */
-export default function verifyToken(
+export function verifyToken(
   req: Request,
   res: Response,
   next: NextFunction

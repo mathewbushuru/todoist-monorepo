@@ -4,7 +4,7 @@
 
 import { Router } from "express";
 
-import verifyToken from "../middleware/auth-jwt.js";
+import { verifyToken } from "../middleware/auth-jwt.js";
 
 const router = Router();
 
