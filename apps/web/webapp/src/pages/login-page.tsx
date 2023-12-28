@@ -53,7 +53,6 @@ export default function LoginPage() {
 
     try {
       const loginResponse = await loginTrigger(loginData).unwrap();
-      console.log(loginResponse);
 
       setLoginErrorMessage("");
       console.log("Login successful");

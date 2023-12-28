@@ -11,7 +11,7 @@ import {
 const SERVER_URL = "https://todoist-d3gq.onrender.com";
 // const SERVER_URL = "http://localhost:5000";
 
-console.log(`Connected to BE: ${SERVER_URL}`)
+console.log(`Connected to BE: ${SERVER_URL}`);
 
 const todoistApi = createApi({
   reducerPath: "todoistApi",
@@ -47,10 +47,17 @@ const todoistApi = createApi({
       }),
       invalidatesTags: [],
     }),
+    verifyToken: builder.query<User, void>({
+      query: () => "/auth/verify-token",
+    }),
   }),
 });
 
-export const { useGetRootQuery, useLoginMutation, useSignupMutation } =
-  todoistApi;
+export const {
+  useGetRootQuery,
+  useLoginMutation,
+  useSignupMutation,
+  useVerifyTokenQuery,
+} = todoistApi;
 
 export default todoistApi;

@@ -5,8 +5,9 @@ import SignupPage from "@/pages/signup-page";
 import LoginPage from "@/pages/login-page";
 import HomePage from "@/pages/home-page";
 
-import { store } from "@/store/store";
 import useAuth from "@/hooks/use-auth";
+import { store } from "@/store/store";
+import { useVerifyTokenQuery } from "@/api";
 
 const publicRoutes = [
   {
@@ -38,6 +39,9 @@ function AppRouter() {
   const { user } = useAuth();
 
   const router = user ? protectedRouter : publicRouter;
+
+  const {data} = useVerifyTokenQuery();
+  console.log(data);
 
   return <RouterProvider router={router} />;
 }
