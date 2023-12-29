@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
 
@@ -6,8 +7,9 @@ import LoginPage from "@/pages/login-page";
 import HomePage from "@/pages/home-page";
 
 import useAuth from "@/hooks/use-auth";
-import { store } from "@/store/store";
 import { useVerifyTokenQuery } from "@/api";
+import { store, useAppDispatch } from "@/store/store";
+import { setCredentials } from "@/store/features/auth-slice";
 
 const publicRoutes = [
   {
@@ -36,12 +38,19 @@ const publicRouter = createBrowserRouter(publicRoutes);
 const protectedRouter = createBrowserRouter(protectedRoutes);
 
 function AppRouter() {
-  const { user } = useAuth();
-
+  const { user, currentToken } = useAuth();
   const router = user ? protectedRouter : publicRouter;
 
-  const {data} = useVerifyTokenQuery();
-  console.log(data);
+  const dispatch = useAppDispatch();
+
+  const { data: userData } = useVerifyTokenQuery();
+
+  useEffect(() => {
+    // if client token is validated by BE, update state with userdata which automatically logs in user
+    if (userData && currentToken) {
+      dispatch(setCredentials({ user: userData, token: currentToken }));
+    }
+  }, [!!userData]);
 
   return <RouterProvider router={router} />;
 }
