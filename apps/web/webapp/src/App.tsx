@@ -31,6 +31,7 @@ const protectedRoutes = [
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <HomePage />
   },
 ];
 
