@@ -1,6 +1,10 @@
 import { useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 import SignupPage from "@/pages/signup-page";
 import LoginPage from "@/pages/login-page";
@@ -31,7 +35,15 @@ const protectedRoutes = [
   {
     path: "/",
     element: <HomePage />,
-    errorElement: <HomePage />
+    errorElement: <HomePage />,
+  },
+  {
+    path: "/auth/signup",
+    element: <Navigate to="/" replace={true} />,
+  },
+  {
+    path: "/auth/login",
+    element: <Navigate to="/" replace={true} />,
   },
 ];
 
