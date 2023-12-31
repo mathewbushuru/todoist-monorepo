@@ -12,6 +12,21 @@ import {
   SquareAsterisk,
 } from "lucide-react";
 import { Drawer, DrawerTrigger, DrawerContent } from "ui";
+import {
+  DropdownButton,
+  DropdownButtonContent,
+  DropdownButtonItem,
+  DropdownButtonLabel,
+  DropdownButtonSeparator,
+  DropdownButtonTrigger,
+  DropdownButtonGroup,
+  DropdownButtonPortal,
+  DropdownButtonSub,
+  DropdownButtonSubContent,
+  DropdownButtonSubTrigger,
+  DropdownButtonShortcut
+} from "ui";
+
 import { AppButton } from "@/components/app-button";
 
 function HomePage() {
@@ -75,7 +90,9 @@ function HomePage() {
           </AppButton>
 
           {/* Side panel projects  */}
-          <h3 className="mb-1 mt-3 px-2 font-semibold text-muted/80">My Projects</h3>
+          <h3 className="mb-1 mt-3 px-2 font-semibold text-muted/80">
+            My Projects
+          </h3>
           <AppButton
             variant="ghost"
             size="sm"
@@ -136,7 +153,86 @@ function HomePage() {
           </div>
 
           {/* Tasks  */}
-          <div className="flex-1 bg-emerald-100"></div>
+          <div className="flex-1 bg-emerald-100 flex flex-col gap-4 items-center">
+            <DropdownButton>
+              <DropdownButtonTrigger>Open</DropdownButtonTrigger>
+              <DropdownButtonContent>
+                <DropdownButtonLabel>
+                  My Account
+                </DropdownButtonLabel>
+                <DropdownButtonSeparator />
+                <DropdownButtonItem>Profile</DropdownButtonItem>
+                <DropdownButtonItem>Billing</DropdownButtonItem>
+                <DropdownButtonItem>Team</DropdownButtonItem>
+                <DropdownButtonItem>Subscription</DropdownButtonItem>
+              </DropdownButtonContent>
+            </DropdownButton>
+
+            <DropdownButton>
+              <DropdownButtonTrigger asChild>
+                <AppButton variant="outline">
+                  Open
+                </AppButton>
+              </DropdownButtonTrigger>
+              <DropdownButtonContent>
+                <DropdownButtonLabel>
+                  My Account
+                </DropdownButtonLabel>
+                <DropdownButtonSeparator />
+                <DropdownButtonGroup>
+                  <DropdownButtonItem>
+                    <span>Profile</span>
+                    <DropdownButtonShortcut>CMD + P</DropdownButtonShortcut>
+                  </DropdownButtonItem>
+                  <DropdownButtonItem>
+                    <span>Billing</span>
+                    <DropdownButtonShortcut>CMD + B</DropdownButtonShortcut>
+                  </DropdownButtonItem>
+                  <DropdownButtonItem>
+                    <span>Settings</span>
+                    <DropdownButtonShortcut>CMD + S</DropdownButtonShortcut>
+                  </DropdownButtonItem>
+                  <DropdownButtonItem>
+                    <span>Keyboard shortcuts</span>
+                    <DropdownButtonShortcut>CMD + K</DropdownButtonShortcut>
+                  </DropdownButtonItem>
+                </DropdownButtonGroup>
+                <DropdownButtonSeparator />
+                <DropdownButtonGroup>
+                  <DropdownButtonItem>
+                    <span>Team</span>
+                  </DropdownButtonItem>
+                  <DropdownButtonSub>
+                    <DropdownButtonSubTrigger>
+                      <span>Invite users</span>
+                    </DropdownButtonSubTrigger>
+                    <DropdownButtonPortal>
+                      <DropdownButtonSubContent>
+                        <DropdownButtonItem>
+                          <span>Email</span>
+                        </DropdownButtonItem>
+                        <DropdownButtonItem>
+                          <span>Message</span>
+                        </DropdownButtonItem>
+                        <DropdownButtonSeparator />
+                        <DropdownButtonItem>
+                          <span>More ...</span>
+                        </DropdownButtonItem>
+                      </DropdownButtonSubContent>
+                    </DropdownButtonPortal>
+                  </DropdownButtonSub>
+                  <DropdownButtonItem>
+                    <span>New Team</span>
+                    <DropdownButtonShortcut>CMD + T</DropdownButtonShortcut>
+                  </DropdownButtonItem>
+                </DropdownButtonGroup>
+                <DropdownButtonSeparator />
+                <DropdownButtonItem>
+                  <span>GitHub</span>
+                </DropdownButtonItem>
+              </DropdownButtonContent>
+            </DropdownButton>
+          </div>
         </div>
       </div>
     </main>
