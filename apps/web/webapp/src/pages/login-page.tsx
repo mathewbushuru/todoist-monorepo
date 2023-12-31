@@ -24,7 +24,7 @@ export default function LoginPage() {
   const [loginErrorMessage, setLoginErrorMessage] = useState("");
 
   // ping API in case it has spin down due to inactivity, so that it's ready for login
-  const { data: _ } = useGetRootQuery();
+  const { data: _ } = useGetRootQuery(undefined, { pollingInterval: 1000 });
 
   const [loginTrigger, { isLoading }] = useLoginMutation();
 

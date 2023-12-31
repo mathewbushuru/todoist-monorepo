@@ -21,7 +21,7 @@ export default function SignupPage() {
   const [signupErrorMessage, setSignupErrorMessage] = useState("");
 
   // ping API in case it has spin down due to inactivity, so that it's ready for signup
-  const { data: _ } = useGetRootQuery();
+  const { data: _ } = useGetRootQuery(undefined, { pollingInterval: 1000 });
 
   const [signupTrigger, { isLoading }] = useSignupMutation();
 
