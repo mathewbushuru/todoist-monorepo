@@ -43,7 +43,7 @@ export const postSignupController = async (req, res, next) => {
     });
 };
 /**
- * @desc:       Log in user
+ * @desc:       Log in user, and generate JWT token
  * @listens:    POST /auth/login
  * @access:     public
  * @param:      req, res, next

@@ -21,3 +21,6 @@ describe("Error handler", () => {
         expect(response.body).toHaveProperty("errorMessage");
     });
 });
+describe("Protected route", () => {
+    it.todo("should access protected route when JWT token is valid");
+});

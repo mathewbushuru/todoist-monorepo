@@ -6,15 +6,14 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./styles": "./dist/index.css"
+    }
   },
   "sideEffects": [
     "**/*.css"
   ],
   "scripts": {
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --watch ",
+    "build": "tsup src/index.tsx",
     "clean": "rm -rf dist"
   },
   "keywords": [],

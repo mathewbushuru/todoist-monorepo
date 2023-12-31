@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "ui/styles";
 import "@/index.css";
 
 import App from "@/App.tsx";
