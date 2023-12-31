@@ -1,45 +1,40 @@
 import {
-  Drawer,
-  DrawerTrigger,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerDescription,
-  DrawerFooter,
-} from "ui";
-import { Button } from "ui";
-
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+  PanelLeftOpen,
+  MessageSquare,
+  SlidersHorizontal,
+  MoreHorizontal,
+} from "lucide-react";
+import { Drawer, DrawerTrigger, DrawerContent } from "ui";
 
 function HomePage() {
   return (
     <main className="bg-background text-foreground">
       <div className="flex min-h-screen flex-col">
-        <Navbar />
-        <div className="flex flex-1 flex-col items-center gap-3 pt-24 text-center">
-          <p>Log in successful</p>
+        {/* Header  */}
+        <div className="">
+          {/* Open/Close sidebar - smaller screens  */}
+          <div className="flex items-center justify-start pl-3 pt-6">
+            <Drawer>
+              <DrawerTrigger>
+                <PanelLeftOpen className="h-6 w-6 text-muted/80 sm:hidden" />
+              </DrawerTrigger>
+              <DrawerContent>Side Panel</DrawerContent>
+            </Drawer>
+          </div>
 
-          <Drawer >
-            <DrawerTrigger asChild>
-              <Button variant="outline">Drawer</Button>
-            </DrawerTrigger>
-            <DrawerContent position="left" size="default">
-              <DrawerHeader>
-                <DrawerTitle>Edit profile</DrawerTitle>
-                <DrawerDescription>
-                  Make changes to your profile here. Click save when you're
-                  done.
-                </DrawerDescription>
-              </DrawerHeader>
-              <div className="h-28 bg-rose-500">Drawer content goes here</div>
-              <DrawerFooter>
-                <Button>Save changes</Button>
-              </DrawerFooter>
-            </DrawerContent>
-          </Drawer>
+          {/* Header content  */}
+          <div className="flex items-center justify-between  py-6 pl-10 pr-10">
+            <h3 className="text-2xl font-semibold">Inbox</h3>
+            <div className="flex items-center gap-3 text-muted/80">
+              <SlidersHorizontal className="h-5 w-5 cursor-pointer" />
+              <MessageSquare className="h-6 w-6 cursor-pointer" />
+              <MoreHorizontal className="h-6 w-6 cursor-pointer" />
+            </div>
+          </div>
         </div>
-        <Footer />
+
+        {/* Tasks  */}
+        <div className="flex-1 bg-emerald-100"></div>
       </div>
     </main>
   );
