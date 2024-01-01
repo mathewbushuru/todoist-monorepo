@@ -64,7 +64,7 @@ const DropdownButtonContent = React.forwardRef<
         ref={ref}
         sideOffset={sideOffset}
         className={cn(
-          "ui-z-50 ui-min-w-[8rem] ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-p-1 ui-text-popover-foreground ui-shadow-md data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-zoom-in-95 data-[state=closed]:ui-zoom-out-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
+          "ui-z-50 ui-min-w-[14rem] ui-ml-2 ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-p-1 ui-text-popover-foreground ui-shadow-md data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-zoom-in-95 data-[state=closed]:ui-zoom-out-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
           className
         )}
         {...props}
@@ -83,7 +83,7 @@ const DropdownButtonItem = React.forwardRef<
     <DropdownButtonPrimitive.Item
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-px-2 ui-py-1.5 ui-rounded-sm ui-text-sm focus:ui-bg-muted/10",
+        "ui-relative ui-flex ui-cursor-pointer ui-select-none ui-items-center ui-px-2 ui-py-1.5 ui-rounded-sm ui-text-sm focus:ui-bg-muted/10 focus:ui-outline-none",
         inset && "ui-pl-8",
         className
       )}

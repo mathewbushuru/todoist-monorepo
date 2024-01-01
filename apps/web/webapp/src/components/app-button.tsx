@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 export const appButtonVariants = cva(
-  "inline-flex justify-center items-center gap-2 rounded-md text-base font-medium transition-opacity disabled:opacity-70",
+  "inline-flex justify-center items-center gap-2 rounded-md text-base font-medium transition-opacity disabled:opacity-70 focus:outline-none",
   {
     variants: {
       variant: {
