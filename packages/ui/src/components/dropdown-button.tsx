@@ -26,7 +26,7 @@ const DropdownButtonSubTrigger = React.forwardRef<
     <DropdownButtonPrimitive.SubTrigger
       ref={ref}
       className={cn(
-        "ui-flex ui-items-center ui-px-2 ui-py-1.5 ui-cursor-default ui-select-none ui-rounded-sm ui-text-sm ui-outline-none data-[state=open]:ui-bg-muted:",
+        "ui-flex ui-items-center ui-px-2 ui-py-1.5 ui-cursor-default ui-select-none ui-rounded-sm ui-text-sm ui-outline-none data-[state=open]:ui-bg-muted/10",
         inset && "ui-pl-8",
         className
       )}
@@ -83,7 +83,7 @@ const DropdownButtonItem = React.forwardRef<
     <DropdownButtonPrimitive.Item
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-pointer ui-select-none ui-items-center ui-px-2 ui-py-1.5 ui-rounded-sm ui-text-sm focus:ui-bg-muted/10 focus:ui-outline-none",
+        "ui-relative ui-flex ui-cursor-pointer ui-select-none ui-items-center ui-px-2 ui-py-1.5 ui-rounded-md ui-text-sm focus:ui-bg-muted/10 focus:ui-outline-none",
         inset && "ui-pl-8",
         className
       )}
@@ -100,7 +100,7 @@ const DropdownButtonCheckboxItem = React.forwardRef<
     <DropdownButtonPrimitive.CheckboxItem
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm focus:ui-bg-muted/10",
+        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm focus:ui-bg-muted/10 ui-outline-none",
         className
       )}
       checked={checked}
@@ -124,7 +124,7 @@ const DropdownButtonRadioItem = React.forwardRef<
     <DropdownButtonPrimitive.RadioItem
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm focus:ui-bg-muted/10",
+        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-outline-none focus:ui-bg-muted/10",
         className
       )}
       {...props}

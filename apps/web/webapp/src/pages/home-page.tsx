@@ -1,12 +1,8 @@
-import {
-  PanelLeftOpen,
-  MessageSquare,
-  SlidersHorizontal,
-  MoreHorizontal,
-} from "lucide-react";
+import { PanelLeftOpen, MessageSquare, MoreHorizontal } from "lucide-react";
 import { Drawer, DrawerTrigger, DrawerContent } from "ui";
 
 import SideNavigation from "@/components/side-navigation";
+import OptionsDropdown from "@/components/options-dropdown";
 
 function HomePage() {
   return (
@@ -36,8 +32,8 @@ function HomePage() {
             {/* Header content  */}
             <div className="flex items-center justify-between  py-6 pl-10 pr-10">
               <h3 className="text-2xl font-semibold">Inbox</h3>
-              <div className="flex items-center gap-3 text-muted/80">
-                <SlidersHorizontal className="h-5 w-5 cursor-pointer" />
+              <div className="flex items-center gap-3 text-muted/80 sm:gap-5">
+                <OptionsDropdown />
                 <MessageSquare className="h-6 w-6 cursor-pointer" />
                 <MoreHorizontal className="h-6 w-6 cursor-pointer" />
               </div>
