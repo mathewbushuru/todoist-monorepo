@@ -32,14 +32,18 @@ import {
 } from "ui";
 
 import { AppButton } from "@/components/app-button";
+import { useAppDispatch } from "@/store/store";
+import { clearCredentials } from "@/store/features/auth-slice";
 
 export default function ProfileDropdown() {
+  const dispatch = useAppDispatch();
+
   return (
     <DropdownButton>
       <DropdownButtonTrigger asChild>
         <AppButton
           variant="ghost"
-          className="justify-start hover:bg-primary/5 mt-2"
+          className="mt-2 justify-start hover:bg-primary/5"
           size="sm"
         >
           <UserCircle className="text-muted/80" />
@@ -127,7 +131,7 @@ export default function ProfileDropdown() {
 
         <DropdownButtonSeparator />
 
-        <DropdownButtonItem>
+        <DropdownButtonItem onClick={() => dispatch(clearCredentials())}>
           <LogOut className="mr-2 h-4 w-4 text-muted/80" />
           <span>Log out</span>
         </DropdownButtonItem>
