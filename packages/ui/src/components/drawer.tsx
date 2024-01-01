@@ -46,7 +46,7 @@ const DrawerOverlay = React.forwardRef<
 });
 
 const DrawerVariants = cva(
-  "ui-z-50 ui-fixed ui-scale-100 ui-bg-background ui-p-6 ui-shadow-lg ui-animate-in ui-duration-300",
+  "ui-z-50 ui-fixed ui-scale-100 ui-bg-background ui-shadow-lg ui-animate-in ui-duration-300",
   {
     variants: {
       position: {
