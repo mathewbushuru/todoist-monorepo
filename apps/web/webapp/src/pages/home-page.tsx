@@ -1,8 +1,9 @@
-import { PanelLeftOpen, MessageSquare, MoreHorizontal } from "lucide-react";
+import { PanelLeftOpen, MessageSquare } from "lucide-react";
 import { Drawer, DrawerTrigger, DrawerContent } from "ui";
 
 import SideNavigation from "@/components/side-navigation";
 import OptionsDropdown from "@/components/options-dropdown";
+import ActionsDropdown from "@/components/actions-dropdown";
 
 function HomePage() {
   return (
@@ -34,8 +35,8 @@ function HomePage() {
               <h3 className="text-2xl font-semibold">Inbox</h3>
               <div className="flex items-center gap-3 text-muted/80 sm:gap-5">
                 <OptionsDropdown />
-                <MessageSquare className="h-6 w-6 cursor-pointer" />
-                <MoreHorizontal className="h-6 w-6 cursor-pointer" />
+                <MessageSquare className="h-6 w-6" />
+                <ActionsDropdown />
               </div>
             </div>
           </div>
