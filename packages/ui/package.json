@@ -8,9 +8,6 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
   "scripts": {
     "dev": "tsup src/index.tsx --watch ",
     "build": "tsup src/index.tsx",

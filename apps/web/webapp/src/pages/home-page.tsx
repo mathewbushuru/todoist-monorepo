@@ -18,7 +18,7 @@ function HomePage() {
         </div>
 
         {/* Main content  */}
-        <div className="flex min-h-screen flex-1 flex-col">
+        <div className=" flex min-h-screen flex-1 flex-col">
           {/* Header  */}
           <div>
             {/* Header open/close sidebar - smaller screens  */}
@@ -27,7 +27,7 @@ function HomePage() {
                 <DrawerTrigger>
                   <PanelLeftOpen className="h-6 w-6 text-muted/80 sm:hidden" />
                 </DrawerTrigger>
-                <DrawerContent>
+                <DrawerContent size="sm">
                   <SideNavigation />
                 </DrawerContent>
               </Drawer>

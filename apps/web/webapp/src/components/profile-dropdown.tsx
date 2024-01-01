@@ -121,7 +121,7 @@ export default function ProfileDropdown() {
           <RefreshCw className="mr-2 h-4 w-4 text-muted/80" />
           <span>Sync</span>
           <DropdownButtonShortcut>
-            {Math.floor(Math.random() * 12)} minutes ago
+            {Math.floor(Math.random() * 4)} minutes ago
           </DropdownButtonShortcut>
         </DropdownButtonItem>
 
