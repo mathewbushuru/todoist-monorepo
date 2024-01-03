@@ -33,3 +33,16 @@ export {
   type labelledInputProps,
 } from "./components/labelled-input";
 export { Logo } from "./components/logo";
+export {
+  Modal,
+  ModalPortal,
+  ModalOverlay,
+  ModalTrigger,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalTitle,
+  ModalDescription,
+  ModalAction,
+  ModalCancel
+} from "./components/modal";
