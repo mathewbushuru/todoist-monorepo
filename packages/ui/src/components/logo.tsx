@@ -4,8 +4,8 @@ interface logoInputProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function Logo({ ...props }: logoInputProps) {
   return (
-    <div className="ui-cursor-pointer" {...props}>
-      <div className="ui-hidden sm:ui-block">
+    <div className="cursor-pointer" {...props}>
+      <div className="hidden sm:block">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 128 32"
@@ -34,7 +34,7 @@ export function Logo({ ...props }: logoInputProps) {
           </g>
         </svg>
       </div>
-      <div className="sm:ui-hidden">
+      <div className="sm:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"

@@ -8,13 +8,13 @@ import { cn } from "../lib/utils";
 const Drawer = DrawerPrimitive.Root;
 const DrawerTrigger = DrawerPrimitive.Trigger;
 
-const portalVariants = cva("ui-fixed ui-inset-0 ui-z-30 ui-flex", {
+const portalVariants = cva("fixed inset-0 z-30 flex", {
   variants: {
     position: {
-      top: "ui-items-start",
-      bottom: "ui-items-end",
-      left: "ui-justify-start",
-      right: "ui-justify-end",
+      top: "items-start",
+      bottom: "items-end",
+      left: "justify-start",
+      right: "justify-end",
     },
   },
   defaultVariants: { position: "left" },
@@ -38,7 +38,7 @@ const DrawerOverlay = React.forwardRef<
 >(({ className, children, ...props }, ref) => {
   return (
     <DrawerPrimitive.Overlay
-      className={cn("ui-fixed ui-inset-0 ui-bg-secondary/50", className)}
+      className={cn("fixed inset-0 bg-secondary/50", className)}
       {...props}
       ref={ref}
     />
@@ -46,14 +46,14 @@ const DrawerOverlay = React.forwardRef<
 });
 
 const DrawerVariants = cva(
-  "ui-z-50 ui-fixed ui-scale-100 ui-bg-background ui-shadow-lg ui-animate-in ui-duration-300",
+  "z-50 fixed scale-100 bg-background shadow-lg animate-in duration-300",
   {
     variants: {
       position: {
-        top: "ui-w-full ui-slide-in-from-top",
-        bottom: "ui-w-full ui-slide-in-from-bottom",
-        left: "ui-h-full ui-slide-in-from-left",
-        right: "ui-h-full ui-slide-in-from-right",
+        top: "w-full slide-in-from-top",
+        bottom: "w-full slide-in-from-bottom",
+        left: "h-full slide-in-from-left",
+        right: "h-full slide-in-from-right",
       },
       size: {
         content: "",
@@ -68,62 +68,62 @@ const DrawerVariants = cva(
       {
         position: ["top", "bottom"],
         size: "content",
-        class: "ui-max-h-screen",
+        class: "max-h-screen",
       },
       {
         position: ["top", "bottom"],
         size: "default",
-        class: "ui-h-1/2 sm:ui-h-1/3",
+        class: "h-1/2 sm:h-1/3",
       },
       {
         position: ["top", "bottom"],
         size: "sm",
-        class: "ui-h-1/4",
+        class: "h-1/4",
       },
       {
         position: ["top", "bottom"],
         size: "lg",
-        class: "ui-h-1/2",
+        class: "h-1/2",
       },
       {
         position: ["top", "bottom"],
         size: "xl",
-        class: "ui-h-5/6",
+        class: "h-5/6",
       },
       {
         position: ["top", "bottom"],
         size: "full",
-        class: "ui-h-screen",
+        class: "h-screen",
       },
       {
         position: ["right", "left"],
         size: "content",
-        class: "ui-max-w-screen",
+        class: "max-w-screen",
       },
       {
         position: ["right", "left"],
         size: "default",
-        class: "ui-w-5/6 sm:ui-w-1/3",
+        class: "w-5/6 sm:w-1/3",
       },
       {
         position: ["right", "left"],
         size: "sm",
-        class: "ui-w-2/3 sm:ui-w-1/4",
+        class: "w-2/3 sm:w-1/4",
       },
       {
         position: ["right", "left"],
         size: "lg",
-        class: "ui-w-5/6 sm:ui-w-1/2",
+        class: "w-5/6 sm:w-1/2",
       },
       {
         position: ["right", "left"],
         size: "xl",
-        class: "ui-w-5/6",
+        class: "w-5/6",
       },
       {
         position: ["right", "left"],
         size: "full",
-        class: "ui-w-screen",
+        class: "w-screen",
       },
     ],
     defaultVariants: {
@@ -150,9 +150,9 @@ const DrawerContent = React.forwardRef<
         {...props}
       >
         {children}
-        <DrawerPrimitive.Cancel className="ui-absolute ui-right-4 ui-top-4 ui-rounded-sm ui-opacity-70 hover:ui-opacity-100">
-          <X className="ui-h-5 ui-w-5" />
-          <span className="ui-sr-only">Close</span>
+        <DrawerPrimitive.Cancel className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100">
+          <X className="h-5 w-5" />
+          <span className="sr-only">Close</span>
         </DrawerPrimitive.Cancel>
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -166,7 +166,7 @@ const DrawerHeader = ({
   return (
     <div
       className={cn(
-        "ui-flex ui-flex-col ui-space-y-2 ui-text-center sm:ui-text-left",
+        "flex flex-col space-y-2 text-center sm:text-left",
         className
       )}
       {...props}
@@ -181,7 +181,7 @@ const DrawerFooter = ({
   return (
     <div
       className={cn(
-        "ui-flex ui-flex-col-reverse sm:ui-flex-row sm:ui-justify-end sm:ui-space-x-2",
+        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
         className
       )}
       {...props}
@@ -197,7 +197,7 @@ export const DrawerAction = React.forwardRef<
     <DrawerPrimitive.Action
       ref={ref}
       className={cn(
-        "ui-flex ui-flex-col-reverse ui-items-stretch sm:ui-flex-row sm:ui-items-center sm:ui-justify-end sm:ui-space-x-2",
+        "flex flex-col-reverse items-stretch sm:flex-row sm:items-center sm:justify-end sm:space-x-2",
         className
       )}
       {...props}
@@ -212,10 +212,7 @@ const DrawerTitle = React.forwardRef<
   return (
     <DrawerPrimitive.Title
       ref={ref}
-      className={cn(
-        "ui-text-lg ui-font-semibold ui-text-foreground",
-        className
-      )}
+      className={cn("text-lg font-semibold text-foreground", className)}
       {...props}
     />
   );
@@ -228,7 +225,7 @@ const DrawerDescription = React.forwardRef<
   return (
     <DrawerPrimitive.Description
       ref={ref}
-      className={cn("ui-text-sm ui-text-muted", className)}
+      className={cn("text-sm text-muted", className)}
       {...props}
     />
   );

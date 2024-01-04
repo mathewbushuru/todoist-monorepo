@@ -3,7 +3,7 @@
 import { Colors } from "./colors";
 
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}", "../ui/src/**/*.{js,ts,jsx,tsx"],
   theme: {
     extend: {
       colors: {

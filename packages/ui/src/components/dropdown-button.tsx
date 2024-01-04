@@ -26,14 +26,14 @@ const DropdownButtonSubTrigger = React.forwardRef<
     <DropdownButtonPrimitive.SubTrigger
       ref={ref}
       className={cn(
-        "ui-flex ui-items-center ui-px-2 ui-py-1.5 ui-cursor-default ui-select-none ui-rounded-sm ui-text-sm ui-outline-none data-[state=open]:ui-bg-muted/10",
-        inset && "ui-pl-8",
+        "flex items-center px-2 py-1.5 cursor-default select-none rounded-sm text-sm outline-none data-[state=open]:bg-muted/10",
+        inset && "pl-8",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronRight className="ui-ml-auto ui-h-4 ui-w-4" />
+      <ChevronRight className="ml-auto h-4 w-4" />
     </DropdownButtonPrimitive.SubTrigger>
   );
 });
@@ -46,7 +46,7 @@ const DropdownButtonSubContent = React.forwardRef<
     <DropdownButtonPrimitive.SubContent
       ref={ref}
       className={cn(
-        "ui-z-50 ui-min-w-[8rem] ui-overflow-hidden ui-bg-popover ui-rounded-md ui-border ui-p-1 ui-text-popover-foreground ui-shadow-lg data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=open]:ui-zoom-in-95 data-[state=closed]:ui-zoom-out-95 data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
+        "z-50 min-w-[8rem] overflow-hidden bg-popover rounded-md border p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className
       )}
       {...props}
@@ -64,7 +64,7 @@ const DropdownButtonContent = React.forwardRef<
         ref={ref}
         sideOffset={sideOffset}
         className={cn(
-          "ui-z-50 ui-min-w-[14rem] ui-ml-2 ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-p-1 ui-text-popover-foreground ui-shadow-md data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-zoom-in-95 data-[state=closed]:ui-zoom-out-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
+          "z-50 min-w-[14rem] ml-2 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
           className
         )}
         {...props}
@@ -83,8 +83,8 @@ const DropdownButtonItem = React.forwardRef<
     <DropdownButtonPrimitive.Item
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-pointer ui-select-none ui-items-center ui-px-2 ui-py-1.5 ui-rounded-md ui-text-sm focus:ui-bg-muted/10 focus:ui-outline-none",
-        inset && "ui-pl-8",
+        "relative flex cursor-pointer select-none items-center px-2 py-1.5 rounded-md text-sm focus:bg-muted/10 focus:outline-none",
+        inset && "pl-8",
         className
       )}
       {...props}
@@ -100,15 +100,15 @@ const DropdownButtonCheckboxItem = React.forwardRef<
     <DropdownButtonPrimitive.CheckboxItem
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm focus:ui-bg-muted/10 ui-outline-none",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm focus:bg-muted/10 outline-none",
         className
       )}
       checked={checked}
       {...props}
     >
-      <span className="ui-absolute ui-left-2 ui-flex ui-h-3.5 ui-w-3.5 ui-items-center ui-justify-center">
+      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         <DropdownButtonPrimitive.ItemIndicator>
-          <Check className="ui-h-4 ui-w-4" />
+          <Check className="h-4 w-4" />
         </DropdownButtonPrimitive.ItemIndicator>
       </span>
       {children}
@@ -124,14 +124,14 @@ const DropdownButtonRadioItem = React.forwardRef<
     <DropdownButtonPrimitive.RadioItem
       ref={ref}
       className={cn(
-        "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-outline-none focus:ui-bg-muted/10",
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-muted/10",
         className
       )}
       {...props}
     >
-      <span className="ui-absolute ui-left-2 ui-flex ui-h-3.5 ui-w-3.5 ui-items-center ui-justify-center">
+      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
         <DropdownButtonPrimitive.ItemIndicator>
-          <Circle className="ui-h-2 ui-w-2 ui-fill-current" />
+          <Circle className="h-2 w-2 fill-current" />
         </DropdownButtonPrimitive.ItemIndicator>
       </span>
       {children}
@@ -149,8 +149,8 @@ const DropdownButtonLabel = React.forwardRef<
     <DropdownButtonPrimitive.Label
       ref={ref}
       className={cn(
-        "ui-px-2 ui-py-1.5 ui-text-sm ui-font-semibold",
-        inset && "ui-pl-8",
+        "px-2 py-1.5 text-sm font-semibold",
+        inset && "pl-8",
         className
       )}
       {...props}
@@ -165,7 +165,7 @@ const DropdownButtonSeparator = React.forwardRef<
   return (
     <DropdownButtonPrimitive.Separator
       ref={ref}
-      className={cn("ui-h-px ui-my-1 -ui-mx-1 ui-bg-muted/20", className)}
+      className={cn("h-px my-1 -mx-1 bg-muted/20", className)}
       {...props}
     />
   );
@@ -177,10 +177,7 @@ const DropdownButtonShortcut = ({
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={cn(
-        "ui-text-xs ui-ml-auto ui-tracking-widest ui-opacity-60",
-        className
-      )}
+      className={cn("text-xs ml-auto tracking-widest opacity-60", className)}
       {...props}
     />
   );

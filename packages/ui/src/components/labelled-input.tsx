@@ -27,21 +27,21 @@ export const LabelledInput = ({
     <div>
       <div
         className={cn(
-          "ui-grid ui-gap-1 ui-rounded-lg ui-px-3 ui-py-2 ui-border ",
+          "grid gap-1 rounded-lg px-3 py-2 border ",
           containerClassname,
-          !hasError && "focus-within:ui-border-secondary-foreground",
-          hasError && "ui-border-primary focus-within:ui-border-primary"
+          !hasError && "focus-within:border-secondary-foreground",
+          hasError && "border-primary focus-within:border-primary"
         )}
       >
         <label
-          className={cn("ui-text-sm ui-text-foreground", labelClassname)}
+          className={cn("text-sm text-foreground", labelClassname)}
           htmlFor={label}
         >
           {label}
         </label>
         <input
           className={cn(
-            "ui-h-7 focus-visible:ui-outline-none ui-font-bold ui-text-foreground placeholder:ui-font-normal",
+            "h-7 focus-visible:outline-none font-bold text-foreground placeholder:font-normal",
             inputClassname
           )}
           value={inputContent}
@@ -52,7 +52,7 @@ export const LabelledInput = ({
         />
       </div>
       {hasError && (
-        <div className="ui-mt-2 ui-flex ui-gap-1 ui-items-center ui-text-xs ui-text-primary ui-font-light">
+        <div className="mt-2 flex gap-1 items-center text-xs text-primary font-light">
           <CautionIcon /> Please enter a valid {label.toLowerCase()}.
         </div>
       )}
