@@ -30,8 +30,9 @@ import {
   DropdownButtonSubTrigger,
   DropdownButtonShortcut,
 } from "ui";
+import { Button } from "ui";
 
-import { AppButton } from "@/components/app-button";
+// import { AppButton } from "@/components/app-button";
 import { useAppDispatch } from "@/store/store";
 import { clearCredentials } from "@/store/features/auth-slice";
 
@@ -41,7 +42,7 @@ export default function ProfileDropdown() {
   return (
     <DropdownButton>
       <DropdownButtonTrigger asChild>
-        <AppButton
+        <Button
           variant="ghost"
           className="mt-2 justify-start hover:bg-primary/5"
           size="sm"
@@ -49,7 +50,7 @@ export default function ProfileDropdown() {
           <UserCircle className="text-muted/80" />
           <span>Mathew</span>
           <ChevronDown className="h-4 w-4 text-muted/80" />
-        </AppButton>
+        </Button>
       </DropdownButtonTrigger>
       <DropdownButtonContent>
         <DropdownButtonLabel>Mathew Bushuru</DropdownButtonLabel>
