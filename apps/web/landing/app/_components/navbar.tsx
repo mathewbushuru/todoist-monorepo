@@ -9,7 +9,7 @@ function Navbar() {
       <div className="mx-auto flex items-center justify-between p-4 xl:max-w-7xl xl:px-16 2xl:max-w-[100rem]">
         <Logo />
         <MenuIcon className="lg:hidden" />
-        <div className="custom-hidden lg:flex lg:items-center xl:gap-3">
+        <div className="hidden lg:flex lg:items-center xl:gap-3">
           {navItems.map((item) => (
             <Button
               key={item}

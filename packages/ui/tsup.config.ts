@@ -6,7 +6,7 @@ export default defineConfig({
   external: ["react"], // dont bundle these modules
   dts: true,
   format: ["esm", "cjs"],
-  injectStyle: true,
+  // injectStyle: true,
   esbuildOptions(options) {
     options.banner = {
       js: '"use client"',

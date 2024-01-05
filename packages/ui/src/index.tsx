@@ -1,4 +1,12 @@
-import "./index.css";
+/**
+ * To inject styles, uncomment injectStyles property in `tsup.config.ts`,
+ * and uncomment `index.css`  import below.
+ * 
+ * Otherwise include the `ui/src` directory in the tailwind config file `content:[]` property 
+ * for each monorepo app that uses this ui package
+ */
+
+// import "./index.css";
 
 export { Button, buttonVariants, type buttonProps } from "./components/button";
 export {
