@@ -1,20 +1,10 @@
-import { PanelLeftOpen, MessageSquare } from "lucide-react";
+import { PanelLeftOpen } from "lucide-react";
 import { Drawer, DrawerTrigger, DrawerContent } from "ui";
-import {
-  Modal,
-  ModalAction,
-  ModalCancel,
-  ModalContent,
-  ModalDescription,
-  ModalFooter,
-  ModalHeader,
-  ModalTitle,
-  ModalTrigger,
-} from "ui";
 
 import SideNavigation from "@/components/side-navigation";
 import OptionsDropdown from "@/components/options-dropdown";
 import ActionsDropdown from "@/components/actions-dropdown";
+import CommentsModal from "@/components/comments-modal";
 
 function HomePage() {
   return (
@@ -46,30 +36,14 @@ function HomePage() {
               <h3 className="text-2xl font-semibold">Inbox</h3>
               <div className="flex items-center gap-3 text-muted/80 sm:gap-5">
                 <OptionsDropdown />
-                <MessageSquare className="h-6 w-6" />
+                <CommentsModal />
                 <ActionsDropdown />
               </div>
             </div>
           </div>
 
           {/* Tasks  */}
-          <div className="flex flex-1 flex-col items-center gap-4 bg-emerald-100">
-            <Modal>
-              <ModalTrigger>Open modal</ModalTrigger>
-              <ModalContent>
-                <ModalHeader>
-                  <ModalTitle>Are you absolutely sure?</ModalTitle>
-                  <ModalDescription>
-                    This action cannot be undone. This will permanently delete your account.
-                  </ModalDescription>
-                </ModalHeader>
-                <ModalFooter>
-                  <ModalCancel>Cancel</ModalCancel>
-                  <ModalAction>Continue</ModalAction>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
-          </div>
+          <div className="flex flex-1 flex-col items-center gap-4 bg-emerald-100"></div>
         </div>
       </div>
     </main>
