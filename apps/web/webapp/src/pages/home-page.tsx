@@ -43,7 +43,7 @@ function HomePage() {
           </div>
 
           {/* Tasks  */}
-          <div className="flex flex-1 flex-col items-center gap-4 bg-emerald-100"></div>
+          <div className="flex flex-1 flex-col items-center gap-4  bg-emerald-100 p-4"></div>
         </div>
       </div>
     </main>

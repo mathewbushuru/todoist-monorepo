@@ -1,14 +1,15 @@
 /**
  * To inject styles, uncomment injectStyles property in `tsup.config.ts`,
  * and uncomment `index.css`  import below.
- * 
- * Otherwise include the `ui/src` directory in the tailwind config file `content:[]` property 
+ *
+ * Otherwise include the `ui/src` directory in the tailwind config file `content:[]` property
  * for each monorepo app that uses this ui package
  */
 
 // import "./index.css";
 
 export { Button, buttonVariants, type buttonProps } from "./components/button";
+export { Calendar } from "./components/calendar";
 export {
   Drawer,
   DrawerTrigger,
@@ -33,8 +34,8 @@ export {
   DropdownButtonSub,
   DropdownButtonSubContent,
   DropdownButtonSubTrigger,
-  DropdownButtonRadioGroup
-} from "./components/dropdown-button"
+  DropdownButtonRadioGroup,
+} from "./components/dropdown-button";
 export { Input, type inputProps } from "./components/input";
 export {
   LabelledInput,
@@ -52,5 +53,5 @@ export {
   ModalTitle,
   ModalDescription,
   ModalAction,
-  ModalCancel
+  ModalCancel,
 } from "./components/modal";
