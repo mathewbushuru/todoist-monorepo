@@ -26,20 +26,20 @@ export default function OptionsDropdown() {
 
         <div className="flex justify-around gap-2 rounded-md bg-muted/5 p-2">
           <DropdownButtonItem className="pointer-events-none bg-background">
-            <div className="flex min-w-[4rem] flex-col items-center gap-1 text-muted/80">
-              <Rows3 className="h-6 w-6" />
+            <div className="flex min-w-[4rem] flex-col items-center gap-1 text-foreground/90">
+              <Rows3 className="h-6 w-6 stroke-1" />
               <span className="text-sm font-light">List</span>
             </div>
           </DropdownButtonItem>
           <DropdownButtonItem>
-            <div className="flex min-w-[4rem] flex-col items-center gap-1  text-muted/80">
-              <Columns3 className="h-6 w-6" />
+            <div className="flex min-w-[4rem] flex-col items-center gap-1  text-foreground/90">
+              <Columns3 className="h-6 w-6 stroke-1" />
               <span className="text-sm font-light">Board</span>
             </div>
           </DropdownButtonItem>
           <DropdownButtonItem>
-            <div className="flex min-w-[4rem] flex-col items-center gap-1 text-muted/80">
-              <CalendarDays className="h-6 w-6" />
+            <div className="flex min-w-[4rem] flex-col items-center gap-1 text-foreground/90">
+              <CalendarDays className="h-6 w-6 stroke-1" />
               <span className="text-sm font-light">Calendar</span>
             </div>
           </DropdownButtonItem>

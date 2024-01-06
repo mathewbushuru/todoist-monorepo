@@ -59,53 +59,53 @@ export default function ProfileDropdown() {
 
         <DropdownButtonGroup>
           <DropdownButtonItem>
-            <Settings className="mr-2 h-4 w-4 text-muted/80" />
+            <Settings className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
             <span>Settings</span>
             <DropdownButtonShortcut>O then S</DropdownButtonShortcut>
           </DropdownButtonItem>
           <DropdownButtonItem>
-            <ActivitySquare className="mr-2 h-4 w-4 text-muted/80" />
+            <ActivitySquare className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
             <span>Activity Log</span>
             <DropdownButtonShortcut>G then A</DropdownButtonShortcut>
           </DropdownButtonItem>
           <DropdownButtonItem>
-            <Printer className="mr-2 h-4 w-4 text-muted/80" />
+            <Printer className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
             <span>Print</span>
             <DropdownButtonShortcut>⌘P</DropdownButtonShortcut>
           </DropdownButtonItem>
           <DropdownButtonSub>
             <DropdownButtonSubTrigger>
-              <BookOpen className="mr-2 h-4 w-4 text-muted/80" />
+              <BookOpen className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
               <span>Resources</span>
             </DropdownButtonSubTrigger>
             <DropdownButtonPortal>
               <DropdownButtonSubContent>
                 <DropdownButtonItem>
-                  <HelpCircle className="mr-2 h-4 w-4 text-muted/80" />
+                  <HelpCircle className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Help center</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <Lightbulb className="mr-2 h-4 w-4 text-muted/80" />
+                  <Lightbulb className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Inspiration</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <Copy className="mr-2 h-4 w-4 text-muted/80" />
+                  <Copy className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Templates</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <Puzzle className="mr-2 h-4 w-4 text-muted/80" />
+                  <Puzzle className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Integration</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <Keyboard className="mr-2 h-4 w-4 text-muted/80" />
+                  <Keyboard className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Keyboard shortcuts</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <GraduationCap className="mr-2 h-4 w-4 text-muted/80" />
+                  <GraduationCap className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Getting started guide</span>
                 </DropdownButtonItem>
                 <DropdownButtonItem>
-                  <TabletSmartphone className="mr-2 h-4 w-4 text-muted/80" />
+                  <TabletSmartphone className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
                   <span>Download apps</span>
                 </DropdownButtonItem>
               </DropdownButtonSubContent>
@@ -123,7 +123,7 @@ export default function ProfileDropdown() {
         <DropdownButtonSeparator />
 
         <DropdownButtonItem>
-          <RefreshCw className="mr-2 h-4 w-4 text-muted/80" />
+          <RefreshCw className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
           <span>Sync</span>
           <DropdownButtonShortcut>
             {Math.floor(Math.random() * 4)} minutes ago
@@ -133,7 +133,7 @@ export default function ProfileDropdown() {
         <DropdownButtonSeparator />
 
         <DropdownButtonItem onClick={() => dispatch(clearCredentials())}>
-          <LogOut className="mr-2 h-4 w-4 text-muted/80" />
+          <LogOut className="mr-2 h-5 w-5 stroke-1 text-muted/90" />
           <span>Log out</span>
         </DropdownButtonItem>
       </DropdownButtonContent>

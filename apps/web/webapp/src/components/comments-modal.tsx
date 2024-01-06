@@ -42,7 +42,8 @@ function CommentsModal() {
         </div>
 
         {/* Messages  */}
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-col flex-1 items-center justify-center">
+          <img src="/discussions.jpg" className="w-1/2"/>
           <span className="max-w-[14rem] text-center text-sm text-popover-foreground/60">
             Centralize your project's high level discussions in project
             comments.

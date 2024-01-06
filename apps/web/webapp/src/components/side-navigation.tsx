@@ -33,7 +33,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <Search className="h-4 w-4 text-muted/80" />
+        <Search className="h-5 w-5 stroke-1 text-muted/90" />
         Search
       </Button>
       <Button
@@ -41,7 +41,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start bg-primary/10 font-light text-primary hover:bg-primary/10"
       >
-        <Inbox className="h-4 w-4 text-primary" />
+        <Inbox className="h-5 w-5 stroke-1 text-primary" />
         Inbox
       </Button>
       <Button
@@ -49,7 +49,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <CalendarClock className="h-4 w-4 text-muted/80" />
+        <CalendarClock className="h-5 w-5 stroke-1 text-muted/90" />
         Today
       </Button>
       <Button
@@ -57,7 +57,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <CalendarDays className="h-4 w-4 text-muted/80" />
+        <CalendarDays className="h-5 w-5 stroke-1 text-muted/90" />
         Upcoming
       </Button>
       <Button
@@ -65,7 +65,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <LayoutGrid className="h-4 w-4 text-muted/80" />
+        <LayoutGrid className="h-5 w-5 stroke-1 text-muted/90" />
         Filters & Labels
       </Button>
 
@@ -78,7 +78,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <SquareAsterisk className="h-4 w-4 text-muted/80" />
+        <SquareAsterisk className="h-5 w-5 stroke-1 text-muted/90" />
         Work
       </Button>
       <Button
@@ -86,7 +86,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <SquareAsterisk className="h-4 w-4 text-muted/80" />
+        <SquareAsterisk className="h-5 w-5 stroke-1 text-muted/90" />
         School
       </Button>
       <Button
@@ -94,7 +94,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <SquareAsterisk className="h-4 w-4 text-muted/80" />
+        <SquareAsterisk className="h-5 w-5 stroke-1 text-muted/90" />
         Free Time
       </Button>
       <Button
@@ -102,7 +102,7 @@ export default function SideNavigation() {
         size="sm"
         className="justify-start font-light hover:bg-primary/5"
       >
-        <SquareAsterisk className="h-4 w-4 text-muted/80" />
+        <SquareAsterisk className="h-5 w-5 stroke-1 text-muted/90" />
         Code
       </Button>
     </nav>

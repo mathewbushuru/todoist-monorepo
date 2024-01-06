@@ -24,7 +24,7 @@ export default function ActionsDropdown() {
       </DropdownButtonTrigger>
       <DropdownButtonContent className="mr-2">
         <DropdownButtonItem>
-          <PlusSquare className="mr-2 h-4 w-4 text-muted/80" />
+          <PlusSquare className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Add section</span>
           <DropdownButtonShortcut>S</DropdownButtonShortcut>
         </DropdownButtonItem>
@@ -32,29 +32,29 @@ export default function ActionsDropdown() {
         <DropdownButtonSeparator />
 
         <DropdownButtonItem>
-          <Download className="mr-2 h-4 w-4 text-muted/80" />
+          <Download className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Import from template</span>
         </DropdownButtonItem>
         <DropdownButtonItem>
-          <Upload className="mr-2 h-4 w-4 text-muted/80" />
+          <Upload className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Export as a template</span>
         </DropdownButtonItem>
 
         <DropdownButtonSeparator />
 
         <DropdownButtonItem>
-          <Mail className="mr-2 h-4 w-4 text-muted/80" />
+          <Mail className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Email tasks to this project</span>
         </DropdownButtonItem>
         <DropdownButtonItem>
-          <List className="mr-2 h-4 w-4 text-muted/80" />
+          <List className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Project calendar feed</span>
         </DropdownButtonItem>
 
         <DropdownButtonSeparator />
 
         <DropdownButtonItem>
-          <Puzzle className="mr-2 h-4 w-4 text-muted/80" />
+          <Puzzle className="mr-2 h-5 w-5 stroke-1 text-muted/80" />
           <span>Add extension ...</span>
         </DropdownButtonItem>
       </DropdownButtonContent>
