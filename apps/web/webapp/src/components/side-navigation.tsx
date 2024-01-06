@@ -1,5 +1,4 @@
 import {
-  PlusCircle,
   Search,
   Inbox,
   CalendarClock,
@@ -10,6 +9,7 @@ import {
 import { Button } from "ui";
 
 import ProfileDropdown from "@/components/profile-dropdown";
+import AddTaskModal from "@/components/add-task-modal";
 
 export default function SideNavigation() {
   return (
@@ -18,14 +18,7 @@ export default function SideNavigation() {
       <ProfileDropdown />
 
       {/* Add task  */}
-      <Button
-        variant="ghost"
-        size="sm"
-        className="mb-2 mt-2 justify-start text-primary hover:bg-primary/5"
-      >
-        <PlusCircle className="h-5 w-5" />
-        Add task
-      </Button>
+      <AddTaskModal />
 
       {/* Filters - Search, Inbox, Today, Upcoming, Labels */}
       <Button
