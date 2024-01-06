@@ -7,7 +7,6 @@ export default defineConfig({
   dts: true,
   format: ["esm", "cjs"],
   // injectStyle: true,
-  treeshake: true,
   esbuildOptions(options) {
     options.banner = {
       js: '"use client"',

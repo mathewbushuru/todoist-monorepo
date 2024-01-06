@@ -13,7 +13,6 @@
     "build": "tsup src/index.tsx",
     "clean": "rm -rf dist"
   },
-  "sideEffects": "false",
   "keywords": [],
   "author": "",
   "license": "ISC",
