@@ -10,6 +10,7 @@
 
 export { Button, buttonVariants, type buttonProps } from "./components/button";
 export { Calendar } from "./components/calendar";
+export { Checkbox } from "./components/checkbox";
 export {
   Drawer,
   DrawerTrigger,

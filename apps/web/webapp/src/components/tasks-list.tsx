@@ -1,3 +1,5 @@
+import { Checkbox } from "ui";
+
 interface TaskType {
   id: number;
   name: string;
@@ -55,5 +57,13 @@ export default function TasksList() {
 }
 
 function Task({ task }: { task: TaskType }) {
-  return <div className="">{task.name}</div>;
+  return (
+    <div className="">
+      <label className="flex items-center gap-3 max-w-[18rem] text-base pt-3 pb-4">
+        <Checkbox />
+        <span>{task.name}</span>
+      </label>
+      <hr className="-mx-1.5"/>
+    </div>
+  );
 }
