@@ -5,6 +5,7 @@ import SideNavigation from "@/components/side-navigation";
 import OptionsDropdown from "@/components/options-dropdown";
 import ActionsDropdown from "@/components/actions-dropdown";
 import CommentsModal from "@/components/comments-modal";
+import TasksList from "@/components/tasks-list";
 
 function HomePage() {
   return (
@@ -43,7 +44,9 @@ function HomePage() {
           </div>
 
           {/* Tasks  */}
-          <div className="flex flex-1 flex-col items-center gap-4  bg-emerald-100 p-4"></div>
+          <div className=" flex-1 ">
+            <TasksList />
+          </div>
         </div>
       </div>
     </main>
