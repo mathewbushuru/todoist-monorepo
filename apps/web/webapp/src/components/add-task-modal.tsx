@@ -90,8 +90,7 @@ function CalendarModal() {
             <ModalAction className="text-sm">Select date</ModalAction>
           ) : (
             <ModalAction className="text-sm">
-              Choose {date.getMonth() + 1} / {date.getDate()} /{" "}
-              {date.getFullYear()}
+              Choose {date.toDateString()}
             </ModalAction>
           )}
         </ModalFooter>

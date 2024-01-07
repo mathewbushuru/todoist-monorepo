@@ -1,10 +1,15 @@
+import { useState } from "react";
+import { CalendarClock } from "lucide-react";
 import { Checkbox } from "ui";
+
+import AddTaskModal from "./add-task-modal";
 
 interface TaskType {
   id: number;
   name: string;
   description: string | null;
   dueDate: Date | null;
+  completed: boolean;
 }
 
 const sampleTasks: TaskType[] = [
@@ -13,36 +18,42 @@ const sampleTasks: TaskType[] = [
     name: "Webapp to watch any movie - movies.mathewbushuru.com",
     description: "Name it Flix?",
     dueDate: null,
+    completed: true,
   },
   {
     id: 2,
     name: "Rix entertainment app - record past movies, books and video games",
     description: "Add ML recommendations",
     dueDate: null,
+    completed: false,
   },
   {
     id: 3,
     name: "Rebuild portfolio - mathewbushuru.com",
     description: null,
     dueDate: null,
+    completed: false,
   },
   {
     id: 4,
     name: "Point of Sales retail system SAAS",
-    description: "merchandising, reports, ordering, warehouse, ecommerce API",
+    description: "Merchandising, reports, ordering, warehouse, ecommerce API",
     dueDate: null,
+    completed: false,
   },
   {
     id: 5,
-    name: "Outfits app",
-    description: null,
-    dueDate: null,
-  },
-  {
-    id: 6,
     name: "Test task name",
     description: "Test task description",
     dueDate: new Date(),
+    completed: false,
+  },
+  {
+    id: 6,
+    name: "Outfits app",
+    description: null,
+    dueDate: null,
+    completed: false,
   },
 ];
 
@@ -52,18 +63,41 @@ export default function TasksList() {
       {sampleTasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
+      <AddTaskModal />
     </div>
   );
 }
 
 function Task({ task }: { task: TaskType }) {
+  const [checked, setChecked] = useState(
+    task.completed ? true : "indeterminate",
+  );
+
   return (
     <div className="">
-      <label className="flex items-center gap-3 max-w-[18rem] text-base pt-3 pb-4">
-        <Checkbox />
-        <span>{task.name}</span>
+      <label className="flex max-w-[18rem] items-center gap-3 pt-3">
+        <Checkbox
+          checked={checked !== "indeterminate"}
+          onCheckedChange={() =>
+            setChecked((prevIsChecked) =>
+              prevIsChecked === "indeterminate" ? false : "indeterminate",
+            )
+          }
+        />
+        <div className="flex flex-col gap-1">
+          <span className="text-base">{task.name}</span>
+          {task.description && (
+            <span className="text-sm text-muted/60">{task.description}</span>
+          )}
+          {task.dueDate && (
+            <span className="flex items-center gap-1 text-xs text-muted/40 text-orange-300">
+              <CalendarClock className="h-4 w-4 stroke-1 " />
+              {task.dueDate.toDateString()}
+            </span>
+          )}
+        </div>
       </label>
-      <hr className="-mx-1.5"/>
+      <hr className="-mx-1.5 mt-4" />
     </div>
   );
 }
