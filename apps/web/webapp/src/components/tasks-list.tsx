@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CalendarClock } from "lucide-react";
 import { Checkbox } from "ui";
 
-import AddTaskModal from "./add-task-modal";
+import AddTaskModal from "@/components/add-task-modal";
 
 interface TaskType {
   id: number;
@@ -11,51 +11,6 @@ interface TaskType {
   dueDate: Date | null;
   completed: boolean;
 }
-
-const sampleTasks: TaskType[] = [
-  {
-    id: 1,
-    name: "Webapp to watch any movie - movies.mathewbushuru.com",
-    description: "Name it Flix?",
-    dueDate: null,
-    completed: true,
-  },
-  {
-    id: 2,
-    name: "Rix entertainment app - record past movies, books and video games",
-    description: "Add ML recommendations",
-    dueDate: null,
-    completed: false,
-  },
-  {
-    id: 3,
-    name: "Rebuild portfolio - mathewbushuru.com",
-    description: null,
-    dueDate: null,
-    completed: false,
-  },
-  {
-    id: 4,
-    name: "Point of Sales retail system SAAS",
-    description: "Merchandising, reports, ordering, warehouse, ecommerce API",
-    dueDate: null,
-    completed: false,
-  },
-  {
-    id: 5,
-    name: "Test task name",
-    description: "Test task description",
-    dueDate: new Date(),
-    completed: false,
-  },
-  {
-    id: 6,
-    name: "Outfits app",
-    description: null,
-    dueDate: null,
-    completed: false,
-  },
-];
 
 export default function TasksList() {
   return (
@@ -75,7 +30,7 @@ function Task({ task }: { task: TaskType }) {
 
   return (
     <div className="">
-      <label className="flex max-w-[18rem] items-center gap-3 pt-3">
+      <label className="flex max-w-[18rem] items-center gap-3 pt-3 sm:max-w-md">
         <Checkbox
           checked={checked !== "indeterminate"}
           onCheckedChange={() =>
@@ -85,9 +40,9 @@ function Task({ task }: { task: TaskType }) {
           }
         />
         <div className="flex flex-col gap-1">
-          <span className="text-base">{task.name}</span>
+          <span className="text-base sm:text-sm">{task.name}</span>
           {task.description && (
-            <span className="text-sm text-muted/60">{task.description}</span>
+            <span className="text-sm text-muted/60 sm:text-xs">{task.description}</span>
           )}
           {task.dueDate && (
             <span className="flex items-center gap-1 text-xs text-muted/40 text-orange-300">
@@ -101,3 +56,49 @@ function Task({ task }: { task: TaskType }) {
     </div>
   );
 }
+
+
+const sampleTasks: TaskType[] = [
+    {
+      id: 1,
+      name: "Webapp to watch any movie - movies.mathewbushuru.com",
+      description: "Name it Flix?",
+      dueDate: null,
+      completed: true,
+    },
+    {
+      id: 2,
+      name: "Rix entertainment app - record past movies, books and video games",
+      description: "Add ML recommendations",
+      dueDate: null,
+      completed: false,
+    },
+    {
+      id: 3,
+      name: "Rebuild portfolio - mathewbushuru.com",
+      description: null,
+      dueDate: null,
+      completed: false,
+    },
+    {
+      id: 4,
+      name: "Point of Sales retail system SAAS",
+      description: "Merchandising, reports, ordering, warehouse, ecommerce API",
+      dueDate: null,
+      completed: false,
+    },
+    {
+      id: 5,
+      name: "Test task name",
+      description: "Test task description",
+      dueDate: new Date(),
+      completed: false,
+    },
+    {
+      id: 6,
+      name: "Outfits app",
+      description: null,
+      dueDate: null,
+      completed: false,
+    },
+  ];

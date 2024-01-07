@@ -75,7 +75,7 @@ function CalendarModal() {
           <span>Due date</span>
         </Button>
       </ModalTrigger>
-      <ModalContent className="items-center">
+      <ModalContent className="items-center max-w-sm">
         <Calendar
           mode="single"
           selected={date}

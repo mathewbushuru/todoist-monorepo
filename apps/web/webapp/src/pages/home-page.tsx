@@ -17,7 +17,7 @@ function HomePage() {
         </div>
 
         {/* Main content  */}
-        <div className=" flex min-h-screen flex-1 flex-col">
+        <div className=" flex min-h-screen flex-1 flex-col max-w-4xl mx-auto">
           {/* Header  */}
           <div>
             {/* Header open/close sidebar - smaller screens  */}
