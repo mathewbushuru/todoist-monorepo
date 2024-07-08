@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { getUserById } from "../database/utils.js";
+import { getUserById } from "../database/mysql/utils.js";
 
 interface User {
   id: number;
