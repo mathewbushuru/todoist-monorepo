@@ -54,7 +54,7 @@ export const postSignupController = async (
     return res.status(400).json({ errorMessage });
   }
   if (!signupReqData.fullName) {
-    const errorMessage = "Sign up error. Name is missing";
+    const errorMessage = "Sign up error. Full name is missing";
     console.error(errorMessage);
     return res.status(400).json({ errorMessage });
   }
