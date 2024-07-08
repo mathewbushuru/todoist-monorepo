@@ -4,30 +4,11 @@ import jwt from "jsonwebtoken";
 import { createUser, getUserByEmail } from "../database/mysql/utils.js";
 import { hashPassword, checkUserPassword } from "../lib/auth.js";
 
-export interface SignupRequestType {
-  email: string;
-  password: string;
-  fullName: string;
-  teamAccount: "yes" | "no";
-  usageMode: "personal" | "work" | "education";
-}
-
-interface LoginRequestType {
-  email: string;
-  password: string;
-}
-
-interface LoginSuccessResponseType {
-  message: string;
-  jwtToken: string;
-  id: number;
-  email: string;
-  fullName: string;
-  teamAccount: "yes" | "no";
-  usageMode: "personal" | "work" | "education";
-  createdAt: string;
-  updatedAt: string;
-}
+import type {
+  SignupRequestType,
+  LoginRequestType,
+  LoginSuccessResponseType,
+} from "../types/user-types.js";
 
 /**
  * @desc:       Sign up user

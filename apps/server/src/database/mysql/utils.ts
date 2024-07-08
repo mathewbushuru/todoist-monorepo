@@ -1,6 +1,6 @@
 import dbPool from "./index.js";
 
-import { type SignupRequestType } from "../../controllers/auth.js";
+import { type SignupRequestType } from "../../types/user-types.js";
 
 interface dbUserType {
   id: number;
