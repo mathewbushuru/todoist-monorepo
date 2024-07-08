@@ -1,6 +1,6 @@
 {
   "name": "todoist-monorepo",
-  "description": "Todoist - React / Express / MySQL/ React Native",
+  "description": "Todoist Clone - React / Express / MySQL/ React Native",
   "version": "0.0.0",
   "license": "ISC",
   "private": true,

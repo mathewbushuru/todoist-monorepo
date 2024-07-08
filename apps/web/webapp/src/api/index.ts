@@ -8,10 +8,10 @@ import {
   type User,
 } from "@/types/auth";
 
-const SERVER_URL = "https://todoist-d3gq.onrender.com";
-// const SERVER_URL = "http://localhost:5000";
+// const SERVER_URL = "https://todoist-d3gq.onrender.com";
+const SERVER_URL = "http://localhost:5000";
 
-console.log(`Connected to BE: ${SERVER_URL}`);
+console.log(`Server URL: ${SERVER_URL}`);
 
 const todoistApi = createApi({
   reducerPath: "todoistApi",

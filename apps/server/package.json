@@ -34,5 +34,8 @@
     "supertest": "^6.3.3",
     "typescript": "^5.2.2",
     "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": "18"
   }
 }

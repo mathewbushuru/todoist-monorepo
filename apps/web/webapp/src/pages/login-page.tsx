@@ -123,7 +123,7 @@ export default function LoginPage() {
           onClick={handleLogin}
           disabled={isLoading}
         >
-          Log in
+          {isLoading ? "Loading..." : "Log in"}
         </Button>
 
         <p className="text-sm leading-5 text-muted">
