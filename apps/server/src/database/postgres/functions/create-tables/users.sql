@@ -25,7 +25,7 @@ CREATE OR REPLACE FUNCTION update_updatedAt_column()
 RETURNS TRIGGER AS $$
 BEGIN
     NEW."updated_at" = NOW();
-    RETURN NEW();
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
