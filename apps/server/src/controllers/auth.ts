@@ -1,8 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-import { createUser as _, getUserByEmail } from "../database/mysql/utils.js";
-import { createUser } from "../database/postgres/utils.js";
+import { createUser, getUserByEmail } from "../database/postgres/utils.js";
 import { hashPassword, checkUserPassword } from "../lib/auth.js";
 
 import type {
@@ -123,7 +122,7 @@ export const postLoginController = async (
     ...userDataWithoutPassword,
     message: "Log in successful",
     jwtToken,
-    teamAccount: userDataWithoutPassword.teamAccount === 1 ? "yes" : "no",
+    teamAccount: userDataWithoutPassword.teamAccount ? "yes" : "no",
     usageMode:
       userDataWithoutPassword.usageMode === 2
         ? "education"

@@ -1,3 +1,14 @@
+export interface UserType {
+  id: number;
+  email: string;
+  hashedPassword: string;
+  fullName: string;
+  usageMode: 0 | 1 | 2;
+  teamAccount: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface SignupRequestType {
   email: string;
   password: string;
