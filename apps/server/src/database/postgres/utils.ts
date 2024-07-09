@@ -11,7 +11,7 @@ export async function createUser(
 ) {
   try {
     const userRows = await sql`
-                            SELECT * from addUser(
+                            SELECT * from addTodoistUser(
                                 ${email},
                                 ${hashedPassword},
                                 ${fullName}, 
@@ -69,21 +69,50 @@ export async function getUserByEmail(email: string) {
 
     if (!userRows || userRows.length === 0) {
       user = null;
+    } else {
+      user = {
+        id: userRows[0].id,
+        email: userRows[0].email,
+        hashedPassword: userRows[0].hashed_password,
+        fullName: userRows[0].full_name,
+        usageMode: userRows[0].usage_mode,
+        teamAccount: userRows[0].team_account,
+        createdAt: userRows[0].created_at,
+        updatedAt: userRows[0].updated_at,
+      };
     }
-
-    user = {
-      id: userRows[0].id,
-      email: userRows[0].email,
-      hashedPassword: userRows[0].hashed_password,
-      fullName: userRows[0].full_name,
-      usageMode: userRows[0].usage_mode,
-      teamAccount: userRows[0].team_account,
-      createdAt: userRows[0].created_at,
-      updatedAt: userRows[0].updated_at,
-    };
 
     return user;
   } catch (error: any) {
     throw new Error(error.message || "Error getting user with email");
   }
 }
+
+export async function getUserById(id: number) {
+    try {
+      const userRows = await sql`
+                              SELECT * FROM todoist_users WHERE id = ${id};
+                            `;
+  
+      let user: UserType | null;
+  
+      if (!userRows || userRows.length === 0) {
+        user = null;
+      } else {
+        user = {
+          id: userRows[0].id,
+          email: userRows[0].email,
+          hashedPassword: userRows[0].hashed_password,
+          fullName: userRows[0].full_name,
+          usageMode: userRows[0].usage_mode,
+          teamAccount: userRows[0].team_account,
+          createdAt: userRows[0].created_at,
+          updatedAt: userRows[0].updated_at,
+        };
+      }
+  
+      return user;
+    } catch (error: any) {
+      throw new Error(error.message || "Error getting user with id");
+    }
+  }

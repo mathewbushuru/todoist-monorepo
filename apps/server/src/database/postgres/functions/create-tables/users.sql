@@ -1,8 +1,8 @@
 -- \c todoistDB
 
-DROP FUNCTION IF EXISTS createUsers();
+DROP FUNCTION IF EXISTS createTodoistUsers();
 
-CREATE OR REPLACE FUNCTION createUsers() RETURNS VOID AS $$ 
+CREATE OR REPLACE FUNCTION createTodoistUsers() RETURNS VOID AS $$ 
 BEGIN 
     DROP TABLE IF EXISTS todoist_users;
     CREATE TABLE todoist_users (
@@ -19,9 +19,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT createUsers();
+SELECT createTodoistUsers();
 
-CREATE OR REPLACE FUNCTION update_updatedAt_column()
+CREATE OR REPLACE FUNCTION todoist_update_updatedAt_column()
 RETURNS TRIGGER AS $$
 BEGIN
     NEW."updated_at" = NOW();
@@ -29,7 +29,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER update_updatedAt 
+CREATE TRIGGER todoist_update_updatedAt 
     BEFORE UPDATE ON todoist_users
         FOR EACH ROW
-            EXECUTE FUNCTION update_updatedAt_column();
+            EXECUTE FUNCTION todoist_update_updatedAt_column();

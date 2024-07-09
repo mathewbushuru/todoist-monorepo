@@ -1,9 +1,9 @@
+--   \c todoistDB
 
+DROP FUNCTION IF EXISTS addTodoistUser(VARCHAR, VARCHAR, VARCHAR, SMALLINT, BOOLEAN);
 
-DROP FUNCTION IF EXISTS addUser(VARCHAR, VARCHAR, VARCHAR, SMALLINT, BOOLEAN);
-
--- addUser eg select * from addUser('test@test.com','TestPassword123','Test Name', '1', TRUE);
-CREATE OR REPLACE FUNCTION addUser(
+-- addTodoistUser eg select * from addTodoistUser('test@test.com','TestPassword123','Test Name', '1', TRUE);
+CREATE OR REPLACE FUNCTION addTodoistUser(
     _email VARCHAR,
     _hashed_password VARCHAR,
     _full_name VARCHAR,
