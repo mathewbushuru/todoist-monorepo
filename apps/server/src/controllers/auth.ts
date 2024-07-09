@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-import { createUser, getUserByEmail } from "../database/mysql/utils.js";
+import { createUser as _, getUserByEmail } from "../database/mysql/utils.js";
+import { createUser } from "../database/postgres/utils.js";
 import { hashPassword, checkUserPassword } from "../lib/auth.js";
 
 import type {
