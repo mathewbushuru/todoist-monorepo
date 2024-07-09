@@ -46,7 +46,7 @@ describe("Auth routes", () => {
         updatedAt: "2023-12-17T05:35:50.000Z",
       };
 
-      const originalImport = await import("../database/utils.js");
+      const originalImport = await import("../database/mysql/utils.js");
       originalImport.createUser = vi
         .fn()
         .mockResolvedValue(expectedUserDbResponse);
@@ -102,7 +102,7 @@ describe("Auth routes", () => {
     });
 
     it("should not sign up user if email is already in database", async () => {
-      const originalImport = await import("../database/utils.js");
+      const originalImport = await import("../database/mysql/utils.js");
       originalImport.createUser = vi
         .fn()
         .mockRejectedValue(
@@ -126,7 +126,7 @@ describe("Auth routes", () => {
 
   describe("POST  /auth/login", () => {
     it("should log in successfully and return user data and JWT token", async () => {
-      const originalDbUtilsImport = await import("../database/utils.js");
+      const originalDbUtilsImport = await import("../database/mysql/utils.js");
       const expectedDbResponse = {
         id: 1,
         email: "matt@test.com",
@@ -185,7 +185,7 @@ describe("Auth routes", () => {
     });
 
     it("should not log in if user is not in database", async () => {
-      const originalDbUtilsImport = await import("../database/utils.js");
+      const originalDbUtilsImport = await import("../database/mysql/utils.js");
       originalDbUtilsImport.getUserByEmail = vi.fn().mockReturnValue(null);
 
       const response = await request(app).post("/auth/login").send({
@@ -200,7 +200,7 @@ describe("Auth routes", () => {
     });
 
     it("should not log in user if the wrong password is provided", async () => {
-      const originalDbUtilsImport = await import("../database/utils.js");
+      const originalDbUtilsImport = await import("../database/mysql/utils.js");
       const expectedDbResponse = {
         id: 1,
         email: "matt@test.com",

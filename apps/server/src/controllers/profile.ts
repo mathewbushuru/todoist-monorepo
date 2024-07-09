@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { getUserById } from "../database/utils.js";
+import { getUserById } from "../database/postgres/utils.js";
 
-interface User {
+interface FrontendUser {
   id: number;
   email: string;
   fullName: string;
@@ -38,9 +38,9 @@ export const getVerifiedUserDataController = async (
   console.log(userData);
   const { hashedPassword, ...userDataWithoutPassword } = userData;
 
-  const userDataResponse: User = {
+  const userDataResponse: FrontendUser = {
     ...userDataWithoutPassword,
-    teamAccount: userDataWithoutPassword.teamAccount === 1 ? "yes" : "no",
+    teamAccount: userDataWithoutPassword.teamAccount ? "yes" : "no",
     usageMode:
       userDataWithoutPassword.usageMode === 2
         ? "education"

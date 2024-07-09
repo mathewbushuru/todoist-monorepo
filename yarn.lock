@@ -7011,6 +7011,11 @@ postcss@^8:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+postgres@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/postgres/-/postgres-3.4.4.tgz#adbe08dc1fff0dea3559aa4f83ded70a289a6cb8"
+  integrity sha512-IbyN+9KslkqcXa8AO9fxpk97PA4pzewvpi2B3Dwy9u4zpV32QicaEdgmF3eSQUzdRk7ttDHQejNgAEr4XoeH4A==
+
 prettier-plugin-tailwindcss@^0.5.7:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.5.7.tgz#d05dc42c6f2167e3bf2c20e9f71a1fff4232b5d9"

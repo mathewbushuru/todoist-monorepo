@@ -10,7 +10,7 @@
 
  - `apps/mobile`: A React Native mobile app for Android and iOS devices.
 
- - `apps/server`: An Express server application for the backend API that serves the mobile app and websites, and connects them to a MySQL database.
+ - `apps/server`: An Express server application for the backend API that serves the mobile app and websites, and connects them to a PostgreSQL database (Project was initially using MySQL. See this code in `mysql` git  branch.).
 
  - `packages/ui`: A React component library package shared by  the web and mobile apps.
  
@@ -34,7 +34,7 @@ Note that the backend is deployed on a free serverless instance. As a result, it
 
 `Backend` : NodeJS, ExpressJS, TypeScript, SuperTest, Vitest
 
-`Database`: MySQL, PlanetScale
+`Database`:  PostgreSQL ( Previously MySQL)
 
 ##### Progress - app:web/landing
 

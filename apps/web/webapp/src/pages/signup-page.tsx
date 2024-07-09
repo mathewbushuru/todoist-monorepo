@@ -124,7 +124,7 @@ export default function SignupPage() {
           onClick={handleSignup}
           disabled={isLoading}
         >
-          Sign up with email
+          {isLoading ? "Loading..." : "Sign up with email"}
         </Button>
 
         <p className="text-sm leading-5 text-muted">

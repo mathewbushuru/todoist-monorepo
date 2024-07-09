@@ -1,33 +1,14 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-import { createUser, getUserByEmail } from "../database/utils.js";
+import { createUser, getUserByEmail } from "../database/postgres/utils.js";
 import { hashPassword, checkUserPassword } from "../lib/auth.js";
 
-export interface SignupRequestType {
-  email: string;
-  password: string;
-  fullName: string;
-  teamAccount: "yes" | "no";
-  usageMode: "personal" | "work" | "education";
-}
-
-interface LoginRequestType {
-  email: string;
-  password: string;
-}
-
-interface LoginSuccessResponseType {
-  message: string;
-  jwtToken: string;
-  id: number;
-  email: string;
-  fullName: string;
-  teamAccount: "yes" | "no";
-  usageMode: "personal" | "work" | "education";
-  createdAt: string;
-  updatedAt: string;
-}
+import type {
+  SignupRequestType,
+  LoginRequestType,
+  LoginSuccessResponseType,
+} from "../types/user-types.js";
 
 /**
  * @desc:       Sign up user
@@ -54,7 +35,7 @@ export const postSignupController = async (
     return res.status(400).json({ errorMessage });
   }
   if (!signupReqData.fullName) {
-    const errorMessage = "Sign up error. Name is missing";
+    const errorMessage = "Sign up error. Full name is missing";
     console.error(errorMessage);
     return res.status(400).json({ errorMessage });
   }
@@ -141,7 +122,7 @@ export const postLoginController = async (
     ...userDataWithoutPassword,
     message: "Log in successful",
     jwtToken,
-    teamAccount: userDataWithoutPassword.teamAccount === 1 ? "yes" : "no",
+    teamAccount: userDataWithoutPassword.teamAccount ? "yes" : "no",
     usageMode:
       userDataWithoutPassword.usageMode === 2
         ? "education"
